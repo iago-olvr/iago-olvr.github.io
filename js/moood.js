@@ -1,6 +1,7 @@
 import { configsCurious } from '/js/curious.js';
 import { configsSnob } from '/js/snob.js';
 import { configsMarijane } from '/js/marijane.js';
+import { configsCocaine } from '/js/cocaine.js';
 
 // --------------- VAR ---------------
 
@@ -14,11 +15,13 @@ let eyeR = document.getElementsByClassName("eyeR")[0];
 let pupE = document.getElementsByClassName("pupE")[0];
 let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
-let eylidD = document.getElementsByClassName("eylidD")[0];
+let eylidR = document.getElementsByClassName("eylidR")[0];
 
 
 let currentHumor = document.getElementById("currentHumor");
 let humorRadio = document.querySelectorAll("input[type='radio']");
+
+
 
 // Initial object with the configs for the behavior
 let configs = {
@@ -26,16 +29,16 @@ let configs = {
     coefReac: null,
     directionShdwX: null,
     directionShdwY: null,
-    minorDirectionLeftX: null,
-    greaterDirectionLeftX: null,
-    minorDirectionLeftY: null,
-    greaterDirectionLeftY: null,
-    minorDirectionRightX: null,
-    greaterDirectionRightX: null,
-    minorDirectionRightY: null,
-    greaterDirectionRightY: null,
+    negativeDirectionLeftX: null,
+    positiveDirectionLeftX: null,
+    upDirectionLeftY: null,
+    downDirectionLeftY: null,
+    negativeDirectionRightX: null,
+    positiveDirectionRightX: null,
+    upDirectionRightY: null,
+    downDirectionRightY: null,
     positionEylidL: null,
-    positionEylidD: null,
+    positionEylidR: null,
     scleraColor: null,
 };
 
@@ -70,19 +73,29 @@ function loadConfig(op) {
             configs = configsCurious(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
+            mouseleave();
             img.src = "/media/VacaAnimadav3.gif";
             break;
         case "snob":
             configs = configsSnob(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
+            mouseleave();
             img.src = "/media/VacaAnimadav3.gif";
             break;
         case "marijane":
             configs = configsMarijane(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
+            mouseleave();
             img.src = "/media/VacaAnimadav4.gif";
+            break;
+        case "rivotril":
+            configs = configsCocaine(configs);
+            eyeL.style.setProperty("background-color", configs.scleraColor)
+            eyeR.style.setProperty("background-color", configs.scleraColor)
+            mouseleave();
+            img.src = "/media/VacaAnimadav5.gif";
             break;
         default:
             break;
@@ -147,15 +160,15 @@ function updateRotation(e) {
 
     //Position
     if (eyeLX > 0) {
-        pupE.style.setProperty("left", configs.greaterDirectionLeftX);
+        pupE.style.setProperty("left", configs.positiveDirectionLeftX);
     } else if (eyeLX < 0) {
-        pupE.style.setProperty("left", configs.minorDirectionLeftX);
+        pupE.style.setProperty("left", configs.negativeDirectionLeftX);
     }
 
     if (eyeLY > 0) {
-        pupE.style.setProperty("top", configs.greaterDirectionLeftY);
+        pupE.style.setProperty("top", configs.downDirectionLeftY);
     } else {
-        pupE.style.setProperty("top", configs.minorDirectionLeftY);
+        pupE.style.setProperty("top", configs.upDirectionLeftY);
     }
 
     eylidL.style.setProperty("top", configs.positionEylidL);
@@ -173,18 +186,18 @@ function updateRotation(e) {
 
     //Position
     if (eyeRX > 0) {
-        pupR.style.setProperty("left", configs.greaterDirectionRightX);
+        pupR.style.setProperty("left", configs.positiveDirectionRightX);
     } else {
-        pupR.style.setProperty("left", configs.minorDirectionRightX);
+        pupR.style.setProperty("left", configs.negativeDirectionRightX);
     }
 
     if (eyeRY > 0) {
-        pupR.style.setProperty("top", configs.greaterDirectionRightY);
+        pupR.style.setProperty("top", configs.downDirectionRightY);
     } else {
-        pupR.style.setProperty("top", configs.minorDirectionRightY);
+        pupR.style.setProperty("top", configs.upDirectionRightY);
     }
 
-    eylidD.style.setProperty("top", configs.positionEylidD);
+    eylidR.style.setProperty("top", configs.positionEylidR);
 }
 
 /**
@@ -201,10 +214,16 @@ function mouseleave() {
 
     pupE.style.setProperty("top", "0px");
     pupR.style.setProperty("top", "0px");
-    eylidL.style.setProperty("top", "-9px");
-    eylidD.style.setProperty("top", "-9px");
 
-    img.style.filter = "drop-shadow(0px 0px 0px grey)"
+    if (currentHumor.innerText == "Ansiosa") {
+        eylidL.style.setProperty("top", configs.positionEylidL);
+        eylidR.style.setProperty("top", configs.positionEylidR);
+    } else {
+        eylidL.style.setProperty("top", "-9px");
+        eylidR.style.setProperty("top", "-9px");
+    }
+
+    img.style.filter = "drop-shadow(0px 0px 0px black)"
 }
 
 /**
