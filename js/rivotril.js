@@ -1,24 +1,24 @@
-export function getConfigsCurious(configs) {
+export function getConfigsRivotril(configs) {
 
     configs.coefRot = 35; //Smaller, higher rotation
-    configs.coefReac = "180ms"; //Higher, slow reaction
+    configs.coefReac = "50ms"; //Higher, slow reaction
 
-    //Direction Toward
+    //Direction Toward VERY FAST
     configs.directionShdwX = "-1"
     configs.directionShdwY = "1"
 
     configs.negativeDirectionLeftX = "-18px"
     configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "-9px"
+    configs.upDirectionLeftY = "-24px"
     configs.downDirectionLeftY = "19px"
 
     configs.negativeDirectionRightX = "-18px"
     configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "-9px"
+    configs.upDirectionRightY = "-24px"
     configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "-19px"
-    configs.positionEylidR = "-19px"
+    configs.positionEylidL = "-34px"
+    configs.positionEylidR = "-34px"
 
     configs.scleraColor = "white"
 
@@ -29,13 +29,13 @@ export function getConfigsCurious(configs) {
     return configs;
 }
 
-export function setUpCurious(setUpConfigs) {
-    setUpConfigs.img.src = "/media/VacaAnimadav3.gif";
+export function setUpRivotril(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav5.gif";
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
-    setUpConfigs.eylidL.style.setProperty("top", "-9px");
-    setUpConfigs.eylidR.style.setProperty("top", "-9px");
-    setUpConfigs.pupE.style.setProperty("width", "26px");
-    setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.eylidL.style.setProperty("top", "-34px");
+    setUpConfigs.eylidR.style.setProperty("top", "-34px");
+    setUpConfigs.pupE.style.setProperty("width", "16px");
+    setUpConfigs.pupR.style.setProperty("width", "16px");
     setUpConfigs.glasses.style.display = 'none';
 }

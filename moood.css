@@ -130,3 +130,44 @@ body {
     top: -9px;
     background-color: black;
 }
+
+.glasses {
+    position: absolute;
+    top: 45px;
+    left: 110px;
+    display: none;
+    animation: showUp 500ms;
+}
+
+@keyframes showUp {
+    100% {
+        transform: rotate(720deg);
+    }
+    from {
+        top: -600px;
+        left: -600px;
+    }
+    to {
+        top: 46px;
+    }
+}
+
+.lensL {
+    position: absolute;
+    width: 50px;
+    height: 42px;
+    top: 145px;
+    left: 89px;
+    background-color: black;
+    opacity: 85%;
+}
+
+.lensR {
+    position: absolute;
+    width: 50px;
+    height: 42px;
+    top: 145px;
+    left: 176px;
+    background-color: black;
+    opacity: 85%;
+}
