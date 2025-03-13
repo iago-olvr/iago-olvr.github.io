@@ -1,7 +1,7 @@
-import { configsCurious } from '/js/curious.js';
-import { configsSnob } from '/js/snob.js';
-import { configsMarijane } from '/js/marijane.js';
-import { configsCocaine } from '/js/cocaine.js';
+import { getConfigsCurious } from '/js/curious.js';
+import { getConfigsSnob } from '/js/snob.js';
+import { getConfigsMarijane } from '/js/marijane.js';
+import { getConfigsCocaine } from '/js/cocaine.js';
 
 // --------------- VAR ---------------
 
@@ -17,13 +17,12 @@ let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 
-
 let currentHumor = document.getElementById("currentHumor");
 let humorRadio = document.querySelectorAll("input[type='radio']");
 
 
 
-// Initial object with the configs for the behavior
+// Object with the configs for the behavior
 let configs = {
     coefRot: null,
     coefReac: null,
@@ -40,6 +39,14 @@ let configs = {
     positionEylidL: null,
     positionEylidR: null,
     scleraColor: null,
+};
+
+// Object with the configs of the properties 
+let setUpConfigs = {
+    img: img,
+    eyeL: eyeL,
+    eyeR: eyeR,
+    glasses: glasses,
 };
 
 // --------------- EVENTS ---------------
@@ -65,7 +72,7 @@ hover.onmouseleave = (e) => {
  * Function that load the initial behavior
  */
 function initialConfig() {
-    configs = configsCurious(configs);
+    configs = getConfigsCurious(configs);
     currentHumor.innerHTML = "Curiosa";
     mouseleave();
 }
@@ -79,28 +86,31 @@ function loadConfig(op) {
 
     switch (op.value) {
         case "curious":
-            configs = configsCurious(configs);
+            configs = getConfigsCurious(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
             mouseleave();
             img.src = "/media/VacaAnimadav3.gif";
+        
             break;
         case "snob":
-            configs = configsSnob(configs);
+            configs = getConfigsSnob(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
             mouseleave();
             img.src = "/media/VacaAnimadav3.gif";
+        
             break;
         case "marijane":
-            configs = configsMarijane(configs);
+            configs = getConfigsMarijane(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
             mouseleave();
             img.src = "/media/VacaAnimadav4.gif";
+        
             break;
         case "rivotril":
-            configs = configsCocaine(configs);
+            configs = getConfigsCocaine(configs);
             eyeL.style.setProperty("background-color", configs.scleraColor)
             eyeR.style.setProperty("background-color", configs.scleraColor)
             mouseleave();

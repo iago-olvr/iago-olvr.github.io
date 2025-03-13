@@ -1,4 +1,4 @@
-export function configsMarijane(configs) {
+export function getConfigsMarijane(configs) {
 
     configs.coefRot = 35; //Smaller, higher rotation
     configs.coefReac = "1800ms"; //Higher, slow reaction

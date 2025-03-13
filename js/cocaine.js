@@ -1,4 +1,4 @@
-export function configsCocaine(configs) {
+export function getConfigsCocaine(configs) {
 
     configs.coefRot = 35; //Smaller, higher rotation
     configs.coefReac = "50ms"; //Higher, slow reaction

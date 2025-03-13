@@ -1,4 +1,4 @@
-export function configsSnob(configs) {
+export function getConfigsSnob(configs) {
 
     configs.coefRot = 35; //Smaller, higher rotation
     configs.coefReac = "180ms"; //Higher, slow reaction
