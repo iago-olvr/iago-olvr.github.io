@@ -16,8 +16,8 @@ body {
     align-items: center;
     text-align: center;
     width: 550px;
-    padding:5%;
-    margin-top:5%;
+    padding: 5%;
+    margin-top: 5%;
     /* border: 5px solid green; */
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 #img {
-    filter: drop-shadow(0px 0px 0px black);    
+    filter: drop-shadow(0px 0px 0px black);
 }
 
 #currentHumor {
@@ -76,7 +76,7 @@ body {
     background-color: transparent;
 }
 .cow {
-    position: relative;   
+    position: relative;
 }
 
 .eyeL {
@@ -86,7 +86,7 @@ body {
     height: 30px;
     justify-content: space-evenly;
     top: 38%;
-    left: 21.5%;   
+    left: 21.5%;
 }
 
 .eyeR {
@@ -102,7 +102,7 @@ body {
 .pupE {
     position: relative;
     display: flex;
-    width: 16px;
+    width: 26px;
     height: 13px;
     background-color: black;
 }
@@ -110,7 +110,7 @@ body {
 .pupR {
     position: relative;
     display: flex;
-    width: 16px;
+    width: 26px;
     height: 13px;
     background-color: black;
 }

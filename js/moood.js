@@ -62,6 +62,15 @@ hover.onmouseleave = (e) => {
 // --------------- FUNCTIONS ---------------
 
 /**
+ * Function that load the initial behavior
+ */
+function initialConfig() {
+    configs = configsCurious(configs);
+    currentHumor.innerHTML = "Curiosa";
+    mouseleave();
+}
+
+/**
  * Function that handles the humor radio.
  * @param {*} op 
  */
@@ -218,21 +227,17 @@ function mouseleave() {
     if (currentHumor.innerText == "Ansiosa") {
         eylidL.style.setProperty("top", configs.positionEylidL);
         eylidR.style.setProperty("top", configs.positionEylidR);
+        pupE.style.setProperty("width", "16px")
+        pupR.style.setProperty("width", "16px")
+
     } else {
         eylidL.style.setProperty("top", "-9px");
         eylidR.style.setProperty("top", "-9px");
+        pupE.style.setProperty("width", "26px")
+        pupR.style.setProperty("width", "26px")
     }
 
     img.style.filter = "drop-shadow(0px 0px 0px black)"
-}
-
-/**
- * Function that load the initial behavior
- */
-function initialConfig() {
-    configs = configsCurious(configs);
-    currentHumor.innerHTML = "Curiosa";
-    mouseleave();
 }
 
 initialConfig();
