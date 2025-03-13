@@ -1,9 +1,9 @@
-export function configsMarijane(configs) {
+export function getConfigsMarijane(configs) {
 
     configs.coefRot = 35; //Smaller, higher rotation
     configs.coefReac = "1800ms"; //Higher, slow reaction
 
-    //Toward but slooooooooowly
+    //Direction Toward but slooooooooowly
     configs.directionShdwX = "-1"
     configs.directionShdwY = "1"
 
@@ -22,5 +22,20 @@ export function configsMarijane(configs) {
 
     configs.scleraColor = "pink"
 
+    configs.propName = "null"
+    configs.propTop = "0px"
+    configs.propLeft = "0px"
+
     return configs;
+}
+
+export function setUpMarijane(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav4.gif";
+    setUpConfigs.eyeL.style.setProperty("background-color", "pink");
+    setUpConfigs.eyeR.style.setProperty("background-color", "pink");
+    setUpConfigs.eylidL.style.setProperty("top", "-9px");
+    setUpConfigs.eylidR.style.setProperty("top", "-9px");
+    setUpConfigs.pupE.style.setProperty("width", "26px");
+    setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.glasses.style.display = 'none';
 }

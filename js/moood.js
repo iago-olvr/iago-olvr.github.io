@@ -1,7 +1,18 @@
-import { configsCurious } from '/js/curious.js';
-import { configsSnob } from '/js/snob.js';
-import { configsMarijane } from '/js/marijane.js';
-import { configsCocaine } from '/js/cocaine.js';
+import { getConfigsCurious } from '/js/curious.js';
+import { setUpCurious } from '/js/curious.js';
+
+import { getConfigsSnob } from '/js/snob.js';
+import { setUpSnob } from '/js/snob.js';
+
+import { getConfigsMarijane } from '/js/marijane.js';
+import { setUpMarijane } from '/js/marijane.js';
+
+import { getConfigsRivotril } from '/js/rivotril.js';
+import { setUpRivotril } from '/js/rivotril.js';
+
+import { getConfigsGum } from '/js/gum.js';
+import { setUpGum } from '/js/gum.js';
+
 
 // --------------- VAR ---------------
 
@@ -16,14 +27,14 @@ let pupE = document.getElementsByClassName("pupE")[0];
 let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
-
+let glasses = document.getElementsByClassName("glasses")[0];
 
 let currentHumor = document.getElementById("currentHumor");
 let humorRadio = document.querySelectorAll("input[type='radio']");
 
+// --------------- OBJECTS ---------------
 
-
-// Initial object with the configs for the behavior
+// Object with the configs for the behavior
 let configs = {
     coefRot: null,
     coefReac: null,
@@ -40,6 +51,22 @@ let configs = {
     positionEylidL: null,
     positionEylidR: null,
     scleraColor: null,
+    propName: null,
+    propTop: null,
+    propLeft: null,
+};
+
+// Object with the configs of the properties. 
+// Used to reset the humor.
+let setUpConfigs = {
+    img: img,
+    eyeL: eyeL,
+    eyeR: eyeR,
+    eylidL: eylidL,
+    eylidR: eylidR,
+    pupE,
+    pupR,
+    glasses: glasses,
 };
 
 // --------------- EVENTS ---------------
@@ -62,40 +89,46 @@ hover.onmouseleave = (e) => {
 // --------------- FUNCTIONS ---------------
 
 /**
+ * Function that load the initial behavior
+ */
+function initialConfig() {
+    configs = getConfigsCurious(configs);
+    currentHumor.innerHTML = "Curiosa";
+    mouseleave();
+}
+
+/**
  * Function that handles the humor radio.
  * @param {*} op 
  */
 function loadConfig(op) {
     currentHumor.innerHTML = op.id;
 
-    switch (op.value) {
-        case "curious":
-            configs = configsCurious(configs);
-            eyeL.style.setProperty("background-color", configs.scleraColor)
-            eyeR.style.setProperty("background-color", configs.scleraColor)
+    switch (op.id) {
+        case "Curiosa":
+            configs = getConfigsCurious(configs);
+            setUpCurious(setUpConfigs);
             mouseleave();
-            img.src = "/media/VacaAnimadav3.gif";
             break;
-        case "snob":
-            configs = configsSnob(configs);
-            eyeL.style.setProperty("background-color", configs.scleraColor)
-            eyeR.style.setProperty("background-color", configs.scleraColor)
+        case "Esnobe":
+            configs = getConfigsSnob(configs);
+            setUpSnob(setUpConfigs);
             mouseleave();
-            img.src = "/media/VacaAnimadav3.gif";
             break;
-        case "marijane":
-            configs = configsMarijane(configs);
-            eyeL.style.setProperty("background-color", configs.scleraColor)
-            eyeR.style.setProperty("background-color", configs.scleraColor)
+        case "Chapada":
+            configs = getConfigsMarijane(configs);
+            setUpMarijane(setUpConfigs);
             mouseleave();
-            img.src = "/media/VacaAnimadav4.gif";
             break;
-        case "rivotril":
-            configs = configsCocaine(configs);
-            eyeL.style.setProperty("background-color", configs.scleraColor)
-            eyeR.style.setProperty("background-color", configs.scleraColor)
+        case "Ansiosa":
+            configs = getConfigsRivotril(configs);
+            setUpRivotril(setUpConfigs);
             mouseleave();
-            img.src = "/media/VacaAnimadav5.gif";
+            break;
+        case "Descolada":
+            configs = getConfigsGum(configs);
+            setUpGum(setUpConfigs);
+            mouseleave();
             break;
         default:
             break;
@@ -198,6 +231,14 @@ function updateRotation(e) {
     }
 
     eylidR.style.setProperty("top", configs.positionEylidR);
+
+    // ------ Props ------
+
+    if (configs.propName != "null") {
+        let prop = document.getElementsByClassName(configs.propName)[0];
+        prop.style.setProperty("top", "-10px")
+        prop.style.setProperty("transform", "rotate(10deg)")
+    }
 }
 
 /**
@@ -215,24 +256,28 @@ function mouseleave() {
     pupE.style.setProperty("top", "0px");
     pupR.style.setProperty("top", "0px");
 
-    if (currentHumor.innerText == "Ansiosa") {
-        eylidL.style.setProperty("top", configs.positionEylidL);
-        eylidR.style.setProperty("top", configs.positionEylidR);
-    } else {
-        eylidL.style.setProperty("top", "-9px");
-        eylidR.style.setProperty("top", "-9px");
-    }
-
     img.style.filter = "drop-shadow(0px 0px 0px black)"
-}
 
-/**
- * Function that load the initial behavior
- */
-function initialConfig() {
-    configs = configsCurious(configs);
-    currentHumor.innerHTML = "Curiosa";
-    mouseleave();
+    //Resets to default of each humor
+    switch (currentHumor.innerText) {
+        case "Curiosa":
+            setUpCurious(setUpConfigs);
+            break;
+        case "Esnobe":
+            setUpSnob(setUpConfigs);
+            break;
+        case "Chapada":
+            setUpMarijane(setUpConfigs);
+            break;
+        case "Ansiosa":
+            setUpRivotril(setUpConfigs);
+            break;
+        case "Descolada":
+            setUpGum(setUpConfigs);
+            break;
+        default:
+            break;
+    }
 }
 
 initialConfig();
