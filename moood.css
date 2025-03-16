@@ -44,7 +44,10 @@ body {
 
 .barn {
     position: absolute;
-    top: -70%;
+    justify-content: center;
+    align-items: center;
+    margin-left: -280px;
+    margin-top: -140px;
     z-index: -1;
 }
 
@@ -80,6 +83,7 @@ body {
     position: relative;
     background-color: transparent;
 }
+
 .cow {
     position: relative;
 }
@@ -148,10 +152,12 @@ body {
     100% {
         transform: rotate(720deg);
     }
+
     from {
         top: -600px;
         left: -600px;
     }
+
     to {
         top: 46px;
     }
