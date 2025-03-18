@@ -13,6 +13,9 @@ import { setUpRivotril } from '/js/rivotril.js';
 import { getConfigsGum } from '/js/gum.js';
 import { setUpGum } from '/js/gum.js';
 
+import { getConfigsShitCrazy } from '/js/shitCrazy.js';
+import { setUpShitCrazy } from '/js/shitCrazy.js';
+
 
 // --------------- VAR ---------------
 
@@ -128,6 +131,11 @@ function loadConfig(op) {
         case "Descolada":
             configs = getConfigsGum(configs);
             setUpGum(setUpConfigs);
+            mouseleave();
+            break;
+        case "Bufano":
+            configs = getConfigsShitCrazy(configs);
+            setUpShitCrazy(setUpConfigs);
             mouseleave();
             break;
         default:

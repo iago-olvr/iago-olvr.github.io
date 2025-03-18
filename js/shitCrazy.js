@@ -1,4 +1,4 @@
-export function getConfigsCurious(configs) {
+export function getConfigsShitCrazy(configs) {
 
     configs.coefRot = 35; //Smaller, higher rotation
     configs.coefReac = "180ms"; //Higher, slow reaction
@@ -9,16 +9,16 @@ export function getConfigsCurious(configs) {
 
     configs.negativeDirectionLeftX = "-18px"
     configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "-9px"
+    configs.upDirectionLeftY = "-1px"
     configs.downDirectionLeftY = "19px"
 
-    configs.negativeDirectionRightX = "-18px"
+    configs.negativeDirectionRightX = "-18px" 
     configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "-9px"
+    configs.upDirectionRightY = "-1px"
     configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "-19px"
-    configs.positionEylidR = "-19px"
+    configs.positionEylidL = "-7px"
+    configs.positionEylidR = "-7px"
 
     configs.scleraColor = "white"
 
@@ -29,14 +29,16 @@ export function getConfigsCurious(configs) {
     return configs;
 }
 
-export function setUpCurious(setUpConfigs) {
-    setUpConfigs.img.src = "/media/VacaAnimadav3.gif";
+export function setUpShitCrazy(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav7.gif";
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
-    setUpConfigs.eylidL.style.setProperty("top", "-9px");
-    setUpConfigs.eylidR.style.setProperty("top", "-9px");
-    setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
-    setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
+    setUpConfigs.eylidL.style.setProperty("top", "-7px");
+    setUpConfigs.eylidR.style.setProperty("top", "-7px");
+
+    setUpConfigs.eylidL.style.setProperty("transform", "rotate(10deg)");
+    setUpConfigs.eylidR.style.setProperty("transform", "rotate(-10deg)");
+    
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
     setUpConfigs.glasses.style.display = 'none';

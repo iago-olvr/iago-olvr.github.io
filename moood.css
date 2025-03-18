@@ -24,33 +24,33 @@ body {
 #cloud1 {
     position: relative;
     float: right;
-    scale: 0.5;
-    animation: panning 250s linear infinite;
+    scale: 0.9;
+    animation: panning 100s linear infinite;
 }
 
 #cloud2 {
     position: relative;
     float: right;
-    scale: 0.6;
+    scale: 0.8;
     margin-left: 900px;
-    animation: panning 200s linear infinite;
+    animation: panning 150s linear infinite;
 }
 
 #cloud3 {
     position: relative;
     float: right;
-    scale: 0.8;
+    scale: 0.6;
     padding-top: 30px;
-    animation: panning 150s linear infinite;
+    animation: panning 200s linear infinite;
 }
 
 #cloud4 {
     position: relative;
     float: right;
-    scale: 0.9;
+    scale: 0.5;
     padding-top: 30px;
     margin-left: 900px;
-    animation: panning 100s linear infinite;
+    animation: panning 250s linear infinite;
 }
 
 @keyframes panning {
@@ -65,7 +65,7 @@ body {
 .leftBarnPanel {
     width: 210px;
     height: 250px;
-    margin-top: 510px;
+    margin-top: 480px;
     /* border: 5px solid blue; */
 }
 
@@ -75,8 +75,8 @@ body {
     align-items: center;
     text-align: center;
     width: 550px;
-    padding: 5%;
-    margin-top: 5%;
+    padding: 5%;   
+    margin-top: 5%;    
 }
 
 .humorPanel {
@@ -98,7 +98,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-left: -280px;
-    margin-top: -140px;
+    margin-top: -155px;
     z-index: -1;
 }
 
@@ -142,21 +142,21 @@ body {
 .eyeL {
     position: absolute;
     display: flex;
-    width: 50px;
-    height: 30px;
+    width: 49px;
+    height: 31px;
     justify-content: space-evenly;
     top: 38%;
-    left: 21.5%;
+    left: 21.9%;
 }
 
 .eyeR {
     position: absolute;
     display: flex;
-    width: 49px;
-    height: 30px;
+    width: 49.5px;
+    height: 31px;
     justify-content: space-evenly;
     top: 38%;
-    left: 47.5%;
+    left: 47.2%;
 }
 
 .pupE {

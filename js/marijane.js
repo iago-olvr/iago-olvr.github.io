@@ -35,6 +35,8 @@ export function setUpMarijane(setUpConfigs) {
     setUpConfigs.eyeR.style.setProperty("background-color", "pink");
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
+    setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
+    setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
     setUpConfigs.glasses.style.display = 'none';
