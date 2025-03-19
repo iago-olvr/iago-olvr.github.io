@@ -34,6 +34,7 @@ let glasses = document.getElementsByClassName("glasses")[0];
 
 let currentHumor = document.getElementById("currentHumor");
 let humorRadio = document.querySelectorAll("input[type='radio']");
+let labels = document.querySelectorAll("label");
 
 // --------------- OBJECTS ---------------
 
@@ -78,6 +79,18 @@ let setUpConfigs = {
 humorRadio.forEach((e) => {
     e.onchange = (e) => {
         loadConfig(e.target);
+    }    
+})
+
+labels.forEach((e) => {
+    e.onmouseover = (e) => {
+        e.target.style.setProperty("font-size", "x-large") 
+        e.target.style.setProperty("font-style", "italic") 
+        
+    }
+    e.onmouseleave = (e) => {
+        e.target.style.setProperty("font-size", "large") 
+        e.target.style.setProperty("font-style", "normal") 
     }
 })
 
