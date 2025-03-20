@@ -135,7 +135,7 @@ btnCicle.onclick = (e) => {
         imgBarn.src = "/media/Barnv2.png";
         document.body.style.backgroundImage = "url('/media/background.png')";
         document.body.style.backgroundColor = "#11ac0d";
-        sky.style.setProperty("display", "initial") ;
+        sky.style.setProperty("display", "fixed") ;
     }
 };
 
