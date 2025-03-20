@@ -1,6 +1,6 @@
 export function getConfigsRivotril(configs) {
 
-    configs.coefRot = 35; 
+    configs.coefRot = 30;
     configs.coefReac = "50ms"; 
 
     //Direction Toward VERY FAST

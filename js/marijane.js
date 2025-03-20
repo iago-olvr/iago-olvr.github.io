@@ -1,6 +1,6 @@
 export function getConfigsMarijane(configs) {
 
-    configs.coefRot = 35; 
+    configs.coefRot = 30; 
     configs.coefReac = "1800ms"; 
 
     //Direction Toward but slooooooooowly

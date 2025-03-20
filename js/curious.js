@@ -1,6 +1,6 @@
 export function getConfigsCurious(configs) {
 
-    configs.coefRot = 35; 
+    configs.coefRot = 30; 
     configs.coefReac = "180ms"; 
 
     //Direction Toward
