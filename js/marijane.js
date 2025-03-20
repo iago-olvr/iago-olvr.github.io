@@ -1,7 +1,7 @@
 export function getConfigsMarijane(configs) {
 
-    configs.coefRot = 35; //Smaller, higher rotation
-    configs.coefReac = "1800ms"; //Higher, slow reaction
+    configs.coefRot = 35; 
+    configs.coefReac = "1800ms"; 
 
     //Direction Toward but slooooooooowly
     configs.directionShdwX = "-1"
@@ -31,13 +31,17 @@ export function getConfigsMarijane(configs) {
 
 export function setUpMarijane(setUpConfigs) {
     setUpConfigs.img.src = "/media/VacaAnimadav4.gif";
+
     setUpConfigs.eyeL.style.setProperty("background-color", "pink");
     setUpConfigs.eyeR.style.setProperty("background-color", "pink");
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
+
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
+
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+
     setUpConfigs.glasses.style.display = 'none';
 }

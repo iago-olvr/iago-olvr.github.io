@@ -1,7 +1,7 @@
 export function getConfigsShitCrazy(configs) {
 
-    configs.coefRot = 35; //Smaller, higher rotation
-    configs.coefReac = "180ms"; //Higher, slow reaction
+    configs.coefRot = 35; 
+    configs.coefReac = "180ms"; 
 
     //Direction Toward
     configs.directionShdwX = "-1"
@@ -42,5 +42,6 @@ export function setUpShitCrazy(setUpConfigs) {
     
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+ 
     setUpConfigs.glasses.style.display = 'none';
 }

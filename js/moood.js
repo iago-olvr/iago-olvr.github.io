@@ -38,66 +38,82 @@ let labels = document.querySelectorAll("label");
 
 // --------------- OBJECTS ---------------
 
-// Object with the configs for the behavior
+/**
+ * Object with the configs for the behavior
+ */
 let configs = {
-    coefRot: null,
-    coefReac: null,
-    directionShdwX: null,
-    directionShdwY: null,
-    negativeDirectionLeftX: null,
-    positiveDirectionLeftX: null,
-    upDirectionLeftY: null,
-    downDirectionLeftY: null,
-    negativeDirectionRightX: null,
-    positiveDirectionRightX: null,
-    upDirectionRightY: null,
-    downDirectionRightY: null,
-    positionEylidL: null,
-    positionEylidR: null,
-    scleraColor: null,
-    propName: null,
-    propTop: null,
-    propLeft: null,
+    coefRot: null, //How much is going to spin. Less = higher rotation
+    coefReac: null, //How fast is going to react. More = slower reaction
+    directionShdwX: null, //The direction of the dropshadown, X axis
+    directionShdwY: null, //The direction of the dropshadown, Y axis
+    negativeDirectionLeftX: null, //The left side of the left eye 
+    positiveDirectionLeftX: null, //The right side of the left eye 
+    upDirectionLeftY: null, //The upper side of the left eye 
+    downDirectionLeftY: null, //The downer side of the left eye 
+    negativeDirectionRightX: null, //The left side of the right eye 
+    positiveDirectionRightX: null, //The right side of the right eye 
+    upDirectionRightY: null, //The upper side of the right eye 
+    downDirectionRightY: null, //The downer side of the right eye 
+    positionEylidL: null, //The position of the Eylid of the left eye
+    positionEylidR: null, //The position of the Eylid of the right eye
+    scleraColor: null, //The color of the sclera FYI(the white portion of the eye is called sclera)
+    propName: null, //The name of the prop, if the mood has one
+    propTop: null, //The top distance of the prop, if the mood has one
+    propLeft: null, //The left distance of the prop, if the mood has one
 };
 
-// Object with the configs of the properties. 
-// Used to reset the humor.
+/**
+ * Object with the configs of the properties. Used to reset the humor
+ */
 let setUpConfigs = {
-    img: img,
-    eyeL: eyeL,
-    eyeR: eyeR,
-    eylidL: eylidL,
-    eylidR: eylidR,
-    pupE,
-    pupR,
-    glasses: glasses,
+    img: img, //The path of the image
+    eyeL: eyeL, //The color of the sclera of the left eye
+    eyeR: eyeR, //The color of the sclera of the right eye
+    eylidL: eylidL, //The initial position of the left eylid
+    eylidR: eylidR, //The initial position of the right eylid
+    pupE, //The initial size of the left pupil
+    pupR, //The initial size of the right pupil
+    glasses: glasses, //the initial state of the glasses
 };
 
 // --------------- EVENTS ---------------
 
-// Handles the humor radio
+/**
+ * Handles the humor radio
+ */
 humorRadio.forEach((e) => {
     e.onchange = (e) => {
         loadConfig(e.target);
-    }    
+    }
 })
 
+/**
+ * Add the zoom effect on the labes when hover
+ */
 labels.forEach((e) => {
     e.onmouseover = (e) => {
-        e.target.style.setProperty("font-size", "x-large") 
-        e.target.style.setProperty("font-style", "italic") 
-        
+        e.target.style.setProperty("font-size", "x-large")
+        e.target.style.setProperty("font-style", "italic")
+
     }
     e.onmouseleave = (e) => {
-        e.target.style.setProperty("font-size", "large") 
-        e.target.style.setProperty("font-style", "normal") 
+        e.target.style.setProperty("font-size", "large")
+        e.target.style.setProperty("font-style", "normal")
     }
 })
 
+/**
+ * Monitors when the mouse enters the hover area
+ * @param {*} e = the mouse moviment
+ */
 hover.onmousemove = (e) => {
     updateRotation(e);
 };
 
+/**
+ * Monitors when the mouse leaves the hover area
+ * @param {*} e = the mouse moviment
+ */
 hover.onmouseleave = (e) => {
     mouseleave();
 };
@@ -115,7 +131,7 @@ function initialConfig() {
 
 /**
  * Function that handles the humor radio.
- * @param {*} op 
+ * @param {*} op = opção de humor selecionada.
  */
 function loadConfig(op) {
     currentHumor.innerHTML = op.id;
