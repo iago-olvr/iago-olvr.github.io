@@ -306,8 +306,9 @@ function mouseleave() {
     document.querySelectorAll('.moves').forEach(el => {
         el.style.transitionDuration = "500ms";
         el.style.transform = "rotateX(0deg) rotateY(0deg)";
+        front.style.transform = "rotateX(0deg) rotateY(0deg)";
     })
-
+    
     pupE.style.setProperty("left", "0px");
     pupR.style.setProperty("left", "0px");
 
