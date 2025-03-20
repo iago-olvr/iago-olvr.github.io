@@ -22,7 +22,15 @@ import { setUpShitCrazy } from '/js/shitCrazy.js';
 let hover = document.getElementsByClassName("hover")[0];
 
 let front = document.getElementsByClassName("front")[0];
+let sky = document.getElementsByClassName("sky")[0];
 let img = document.getElementById("img");
+let imgBarn = document.getElementById("barn");
+
+let currentHumor = document.getElementById("currentHumor");
+let humorRadio = document.querySelectorAll("input[type='radio']");
+let labels = document.querySelectorAll("label");
+
+let btnCicle = document.getElementById("cicleButton");
 
 let eyeL = document.getElementsByClassName("eyeL")[0];
 let eyeR = document.getElementsByClassName("eyeR")[0];
@@ -32,9 +40,6 @@ let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
 
-let currentHumor = document.getElementById("currentHumor");
-let humorRadio = document.querySelectorAll("input[type='radio']");
-let labels = document.querySelectorAll("label");
 
 // --------------- OBJECTS ---------------
 
@@ -116,6 +121,22 @@ hover.onmousemove = (e) => {
  */
 hover.onmouseleave = (e) => {
     mouseleave();
+};
+
+btnCicle.onclick = (e) => {
+    if (btnCicle.value == "day") { //Change to Night
+        btnCicle.value = "night"
+        imgBarn.src = "/media/Barnv3.png";    
+        document.body.style.backgroundImage = "url('/media/backgroundv2.png')";
+        document.body.style.backgroundColor = "#074505";
+        sky.style.setProperty("display", "none") ;
+    } else {  //Change to Day
+        btnCicle.value = "day"
+        imgBarn.src = "/media/Barnv2.png";
+        document.body.style.backgroundImage = "url('/media/background.png')";
+        document.body.style.backgroundColor = "#11ac0d";
+        sky.style.setProperty("display", "initial") ;
+    }
 };
 
 // --------------- FUNCTIONS ---------------
