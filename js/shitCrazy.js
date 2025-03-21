@@ -1,7 +1,7 @@
 export function getConfigsShitCrazy(configs) {
 
-    configs.coefRot = 30; 
-    configs.coefReac = "180ms"; 
+    configs.coefRot = 30;
+    configs.coefReac = "180ms";
 
     //Direction Toward
     configs.directionShdwX = "-1"
@@ -12,7 +12,7 @@ export function getConfigsShitCrazy(configs) {
     configs.upDirectionLeftY = "-1px"
     configs.downDirectionLeftY = "19px"
 
-    configs.negativeDirectionRightX = "-18px" 
+    configs.negativeDirectionRightX = "-18px"
     configs.positiveDirectionRightX = "20px"
     configs.upDirectionRightY = "-1px"
     configs.downDirectionRightY = "19px"
@@ -26,12 +26,14 @@ export function getConfigsShitCrazy(configs) {
     configs.propTop = "0px"
     configs.propLeft = "0px"
 
+    configs.time = "D"
+
     return configs;
 }
 
 export function setUpShitCrazy(setUpConfigs) {
     setUpConfigs.img.src = "/media/VacaAnimadav7.gif";
-        
+
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
     setUpConfigs.eylidL.style.setProperty("top", "-7px");
@@ -39,9 +41,9 @@ export function setUpShitCrazy(setUpConfigs) {
 
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(10deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(-10deg)");
-    
+
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
- 
+
     setUpConfigs.glasses.style.display = 'none';
 }

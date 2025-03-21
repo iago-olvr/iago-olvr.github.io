@@ -1,7 +1,7 @@
 export function getConfigsGum(configs) {
 
-    configs.coefRot = 30; 
-    configs.coefReac = "180ms"; 
+    configs.coefRot = 30;
+    configs.coefReac = "180ms";
 
     //Direction Toward the cooler way possible
     configs.directionShdwX = "-1"
@@ -26,6 +26,8 @@ export function getConfigsGum(configs) {
     configs.propTop = "45px"
     configs.propLeft = "110px"
 
+    configs.time = "D"
+
     return configs;
 }
 
@@ -36,13 +38,13 @@ export function setUpGum(setUpConfigs) {
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
-    
+
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
-    
+
     setUpConfigs.glasses.style.display = 'inline-block';
     setUpConfigs.glasses.style.setProperty("top", "45px");
     setUpConfigs.glasses.style.setProperty("transform", "rotate(0deg)")

@@ -1,24 +1,24 @@
-export function getConfigsRivotril(configs) {
+export function getConfigsDramin(configs) {
 
     configs.coefRot = 30;
-    configs.coefReac = "50ms";
+    configs.coefReac = "180ms";
 
-    //Direction Toward VERY FAST
+    //Direction Toward
     configs.directionShdwX = "-1"
     configs.directionShdwY = "1"
 
     configs.negativeDirectionLeftX = "-18px"
     configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "-24px"
+    configs.upDirectionLeftY = "-9px"
     configs.downDirectionLeftY = "19px"
 
     configs.negativeDirectionRightX = "-18px"
     configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "-24px"
+    configs.upDirectionRightY = "-9px"
     configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "-34px"
-    configs.positionEylidR = "-34px"
+    configs.positionEylidL = "-19px"
+    configs.positionEylidR = "-19px"
 
     configs.scleraColor = "white"
 
@@ -26,24 +26,24 @@ export function getConfigsRivotril(configs) {
     configs.propTop = "0px"
     configs.propLeft = "0px"
 
-    configs.time = "D"
+    configs.time = "N"
 
     return configs;
 }
 
-export function setUpRivotril(setUpConfigs) {
-    setUpConfigs.img.src = "/media/VacaAnimadav5.gif";
+export function setUpDramin(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav3.gif";
 
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
-    setUpConfigs.eylidL.style.setProperty("top", "-34px");
-    setUpConfigs.eylidR.style.setProperty("top", "-34px");
+    setUpConfigs.eylidL.style.setProperty("top", "-9px");
+    setUpConfigs.eylidR.style.setProperty("top", "-9px");
 
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "16px");
-    setUpConfigs.pupR.style.setProperty("width", "16px");
+    setUpConfigs.pupE.style.setProperty("width", "26px");
+    setUpConfigs.pupR.style.setProperty("width", "26px");
 
     setUpConfigs.glasses.style.display = 'none';
 }

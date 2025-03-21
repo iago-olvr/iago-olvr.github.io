@@ -1,7 +1,7 @@
 export function getConfigsSnob(configs) {
 
-    configs.coefRot = 30; 
-    configs.coefReac = "180ms"; 
+    configs.coefRot = 30;
+    configs.coefReac = "180ms";
 
     //Direction Away From
     configs.directionShdwX = "1"
@@ -25,7 +25,9 @@ export function getConfigsSnob(configs) {
     configs.propName = "null"
     configs.propTop = "0px"
     configs.propLeft = "0px"
-    
+
+    configs.time = "D"
+
     return configs;
 }
 
@@ -42,6 +44,6 @@ export function setUpSnob(setUpConfigs) {
 
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
-    
+
     setUpConfigs.glasses.style.display = 'none';
 }

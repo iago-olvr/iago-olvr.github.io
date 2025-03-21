@@ -1,7 +1,7 @@
 export function getConfigsMarijane(configs) {
 
-    configs.coefRot = 30; 
-    configs.coefReac = "1800ms"; 
+    configs.coefRot = 30;
+    configs.coefReac = "1800ms";
 
     //Direction Toward but slooooooooowly
     configs.directionShdwX = "-1"
@@ -25,6 +25,8 @@ export function getConfigsMarijane(configs) {
     configs.propName = "null"
     configs.propTop = "0px"
     configs.propLeft = "0px"
+
+    configs.time = "D"
 
     return configs;
 }

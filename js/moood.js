@@ -16,6 +16,9 @@ import { setUpGum } from '/js/gum.js';
 import { getConfigsShitCrazy } from '/js/shitCrazy.js';
 import { setUpShitCrazy } from '/js/shitCrazy.js';
 
+import { getConfigsDramin } from '/js/dramin.js';
+import { setUpDramin } from '/js/dramin.js';
+
 
 // --------------- VAR ---------------
 
@@ -29,8 +32,6 @@ let imgBarn = document.getElementById("barn");
 let currentHumor = document.getElementById("currentHumor");
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
-
-let btnCicle = document.getElementById("cicleButton");
 
 let eyeL = document.getElementsByClassName("eyeL")[0];
 let eyeR = document.getElementsByClassName("eyeR")[0];
@@ -65,6 +66,7 @@ let configs = {
     propName: null, //The name of the prop, if the mood has one
     propTop: null, //The top distance of the prop, if the mood has one
     propLeft: null, //The left distance of the prop, if the mood has one
+    time: null, //Day/Night
 };
 
 /**
@@ -76,8 +78,8 @@ let setUpConfigs = {
     eyeR: eyeR, //The color of the sclera of the right eye
     eylidL: eylidL, //The initial position of the left eylid
     eylidR: eylidR, //The initial position of the right eylid
-    pupE, //The initial size of the left pupil
-    pupR, //The initial size of the right pupil
+    pupE: pupE, //The initial size of the left pupil
+    pupR: pupR, //The initial size of the right pupil
     glasses: glasses, //the initial state of the glasses
 };
 
@@ -121,22 +123,6 @@ hover.onmousemove = (e) => {
  */
 hover.onmouseleave = (e) => {
     mouseleave();
-};
-
-btnCicle.onclick = (e) => {
-    if (btnCicle.value == "day") { //Change to Night
-        btnCicle.value = "night"
-        imgBarn.src = "/media/Barnv3.png";    
-        document.body.style.backgroundImage = "url('/media/backgroundv2.png')";
-        document.body.style.backgroundColor = "#074505";
-        sky.style.setProperty("display", "none") ;
-    } else {  //Change to Day
-        btnCicle.value = "day"
-        imgBarn.src = "/media/Barnv2.png";
-        document.body.style.backgroundImage = "url('/media/background.png')";
-        document.body.style.backgroundColor = "#11ac0d";
-        sky.style.setProperty("display", "fixed") ;
-    }
 };
 
 // --------------- FUNCTIONS ---------------
@@ -186,6 +172,11 @@ function loadConfig(op) {
         case "Bufano":
             configs = getConfigsShitCrazy(configs);
             setUpShitCrazy(setUpConfigs);
+            mouseleave();
+            break;
+        case "Dormindo":
+            configs = getConfigsDramin(configs);
+            setUpDramin(setUpConfigs);
             mouseleave();
             break;
         default:
@@ -308,7 +299,7 @@ function mouseleave() {
         el.style.transform = "rotateX(0deg) rotateY(0deg)";
         front.style.transform = "rotateX(0deg) rotateY(0deg)";
     })
-    
+
     pupE.style.setProperty("left", "0px");
     pupR.style.setProperty("left", "0px");
 
@@ -316,6 +307,29 @@ function mouseleave() {
     pupR.style.setProperty("top", "0px");
 
     img.style.filter = "drop-shadow(0px 0px 0px black)"
+
+    if (configs.time == "N") { //Night
+        imgBarn.src = "/media/Barnv3.png";
+        document.body.style.backgroundImage = "url('/media/backgroundv2.png')";
+        document.body.style.backgroundColor = "#074505";
+        sky.style.setProperty("display", "none");
+        labels.forEach((e) => {
+            e.style.setProperty("color", "darkslategray");
+        })
+        currentHumor.style.setProperty("color", "darkslategray");
+        humorRadio.forEach((e) => {
+            e.style.setProperty("backgroundColor", "darkslategray");
+        })
+    } else { //Day
+        imgBarn.src = "/media/Barnv2.png";
+        document.body.style.backgroundImage = "url('/media/background.png')";
+        document.body.style.backgroundColor = "#11ac0d";
+        sky.style.setProperty("display", "fixed");
+        labels.forEach((e) => {
+            e.style.setProperty("color", "papayawhip");
+        })
+        currentHumor.style.setProperty("color", "papayawhip");
+    }
 
     //Resets to default of each humor
     switch (currentHumor.innerText) {
@@ -333,6 +347,12 @@ function mouseleave() {
             break;
         case "Descolada":
             setUpGum(setUpConfigs);
+            break;
+        case "Bufano":
+            setUpShitCrazy(setUpConfigs);
+            break;
+        case "Dormindo":
+            setUpDramin(setUpConfigs);
             break;
         default:
             break;
