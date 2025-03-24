@@ -328,7 +328,7 @@ function mouseleave() {
         imgBarn.src = "/media/Barnv2.png";
         document.body.style.backgroundImage = "url('/media/background.png')";
         document.body.style.backgroundColor = "#11ac0d";
-        sky.style.setProperty("display", "fixed");
+        sky.style.setProperty("display", "block");
         labels.forEach((e) => {
             e.style.setProperty("color", "papayawhip");
         })
