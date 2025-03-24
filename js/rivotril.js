@@ -1,7 +1,7 @@
 export function getConfigsRivotril(configs) {
 
-    configs.coefRot = 35; //Smaller, higher rotation
-    configs.coefReac = "50ms"; //Higher, slow reaction
+    configs.coefRot = 30;
+    configs.coefReac = "50ms";
 
     //Direction Toward VERY FAST
     configs.directionShdwX = "-1"
@@ -26,18 +26,24 @@ export function getConfigsRivotril(configs) {
     configs.propTop = "0px"
     configs.propLeft = "0px"
 
+    configs.time = "D"
+
     return configs;
 }
 
 export function setUpRivotril(setUpConfigs) {
     setUpConfigs.img.src = "/media/VacaAnimadav5.gif";
+
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
     setUpConfigs.eylidL.style.setProperty("top", "-34px");
     setUpConfigs.eylidR.style.setProperty("top", "-34px");
+
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
+
     setUpConfigs.pupE.style.setProperty("width", "16px");
     setUpConfigs.pupR.style.setProperty("width", "16px");
+
     setUpConfigs.glasses.style.display = 'none';
 }

@@ -1,7 +1,7 @@
 export function getConfigsSnob(configs) {
 
-    configs.coefRot = 35; //Smaller, higher rotation
-    configs.coefReac = "180ms"; //Higher, slow reaction
+    configs.coefRot = 30;
+    configs.coefReac = "180ms";
 
     //Direction Away From
     configs.directionShdwX = "1"
@@ -25,19 +25,25 @@ export function getConfigsSnob(configs) {
     configs.propName = "null"
     configs.propTop = "0px"
     configs.propLeft = "0px"
-    
+
+    configs.time = "D"
+
     return configs;
 }
 
 export function setUpSnob(setUpConfigs) {
     setUpConfigs.img.src = "/media/VacaAnimadav3.gif";
+
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
+
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
+
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+
     setUpConfigs.glasses.style.display = 'none';
 }

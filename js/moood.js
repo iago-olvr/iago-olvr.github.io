@@ -16,13 +16,22 @@ import { setUpGum } from '/js/gum.js';
 import { getConfigsShitCrazy } from '/js/shitCrazy.js';
 import { setUpShitCrazy } from '/js/shitCrazy.js';
 
+import { getConfigsDramin } from '/js/dramin.js';
+import { setUpDramin } from '/js/dramin.js';
+
 
 // --------------- VAR ---------------
 
 let hover = document.getElementsByClassName("hover")[0];
 
 let front = document.getElementsByClassName("front")[0];
+let sky = document.getElementsByClassName("sky")[0];
 let img = document.getElementById("img");
+let imgBarn = document.getElementById("barn");
+
+let currentHumor = document.getElementById("currentHumor");
+let humorRadio = document.querySelectorAll("input[type='radio']");
+let labels = document.querySelectorAll("label");
 
 let eyeL = document.getElementsByClassName("eyeL")[0];
 let eyeR = document.getElementsByClassName("eyeR")[0];
@@ -32,59 +41,86 @@ let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
 
-let currentHumor = document.getElementById("currentHumor");
-let humorRadio = document.querySelectorAll("input[type='radio']");
 
 // --------------- OBJECTS ---------------
 
-// Object with the configs for the behavior
+/**
+ * Object with the configs for the behavior
+ */
 let configs = {
-    coefRot: null,
-    coefReac: null,
-    directionShdwX: null,
-    directionShdwY: null,
-    negativeDirectionLeftX: null,
-    positiveDirectionLeftX: null,
-    upDirectionLeftY: null,
-    downDirectionLeftY: null,
-    negativeDirectionRightX: null,
-    positiveDirectionRightX: null,
-    upDirectionRightY: null,
-    downDirectionRightY: null,
-    positionEylidL: null,
-    positionEylidR: null,
-    scleraColor: null,
-    propName: null,
-    propTop: null,
-    propLeft: null,
+    coefRot: null, //How much is going to spin. Less = higher rotation
+    coefReac: null, //How fast is going to react. More = slower reaction
+    directionShdwX: null, //The direction of the dropshadown, X axis
+    directionShdwY: null, //The direction of the dropshadown, Y axis
+    negativeDirectionLeftX: null, //The left side of the left eye 
+    positiveDirectionLeftX: null, //The right side of the left eye 
+    upDirectionLeftY: null, //The upper side of the left eye 
+    downDirectionLeftY: null, //The downer side of the left eye 
+    negativeDirectionRightX: null, //The left side of the right eye 
+    positiveDirectionRightX: null, //The right side of the right eye 
+    upDirectionRightY: null, //The upper side of the right eye 
+    downDirectionRightY: null, //The downer side of the right eye 
+    positionEylidL: null, //The position of the Eylid of the left eye
+    positionEylidR: null, //The position of the Eylid of the right eye
+    scleraColor: null, //The color of the sclera FYI(the white portion of the eye is called sclera)
+    propName: null, //The name of the prop, if the mood has one
+    propTop: null, //The top distance of the prop, if the mood has one
+    propLeft: null, //The left distance of the prop, if the mood has one
+    time: null, //Day/Night
 };
 
-// Object with the configs of the properties. 
-// Used to reset the humor.
+/**
+ * Object with the configs of the properties. Used to reset the humor
+ */
 let setUpConfigs = {
-    img: img,
-    eyeL: eyeL,
-    eyeR: eyeR,
-    eylidL: eylidL,
-    eylidR: eylidR,
-    pupE,
-    pupR,
-    glasses: glasses,
+    img: img, //The path of the image
+    eyeL: eyeL, //The color of the sclera of the left eye
+    eyeR: eyeR, //The color of the sclera of the right eye
+    eylidL: eylidL, //The initial position of the left eylid
+    eylidR: eylidR, //The initial position of the right eylid
+    pupE: pupE, //The initial size of the left pupil
+    pupR: pupR, //The initial size of the right pupil
+    glasses: glasses, //the initial state of the glasses
 };
 
 // --------------- EVENTS ---------------
 
-// Handles the humor radio
+/**
+ * Handles the humor radio
+ */
 humorRadio.forEach((e) => {
     e.onchange = (e) => {
         loadConfig(e.target);
     }
 })
 
+/**
+ * Add the zoom effect on the labes when hover
+ */
+labels.forEach((e) => {
+    e.onmouseover = (e) => {
+        e.target.style.setProperty("font-size", "x-large")
+        e.target.style.setProperty("font-style", "italic")
+
+    }
+    e.onmouseleave = (e) => {
+        e.target.style.setProperty("font-size", "large")
+        e.target.style.setProperty("font-style", "normal")
+    }
+})
+
+/**
+ * Monitors when the mouse enters the hover area
+ * @param {*} e = the mouse moviment
+ */
 hover.onmousemove = (e) => {
     updateRotation(e);
 };
 
+/**
+ * Monitors when the mouse leaves the hover area
+ * @param {*} e = the mouse moviment
+ */
 hover.onmouseleave = (e) => {
     mouseleave();
 };
@@ -102,7 +138,7 @@ function initialConfig() {
 
 /**
  * Function that handles the humor radio.
- * @param {*} op 
+ * @param {*} op = opção de humor selecionada.
  */
 function loadConfig(op) {
     currentHumor.innerHTML = op.id;
@@ -137,6 +173,15 @@ function loadConfig(op) {
             configs = getConfigsShitCrazy(configs);
             setUpShitCrazy(setUpConfigs);
             mouseleave();
+            break;
+        case "Dormindo":
+            eyeL.style.display="none";
+            eyeR.style.display="none";
+            configs = getConfigsDramin(configs);
+            setUpDramin(setUpConfigs);
+            mouseleave();
+            eyeL.style.display="flex";
+            eyeR.style.display="flex";
             break;
         default:
             break;
@@ -256,6 +301,7 @@ function mouseleave() {
     document.querySelectorAll('.moves').forEach(el => {
         el.style.transitionDuration = "500ms";
         el.style.transform = "rotateX(0deg) rotateY(0deg)";
+        front.style.transform = "rotateX(0deg) rotateY(0deg)";
     })
 
     pupE.style.setProperty("left", "0px");
@@ -265,6 +311,29 @@ function mouseleave() {
     pupR.style.setProperty("top", "0px");
 
     img.style.filter = "drop-shadow(0px 0px 0px black)"
+
+    if (configs.time == "N") { //Night
+        imgBarn.src = "/media/Barnv3.png";
+        document.body.style.backgroundImage = "url('/media/backgroundv2.png')";
+        document.body.style.backgroundColor = "#074505";
+        sky.style.setProperty("display", "none");
+        labels.forEach((e) => {
+            e.style.setProperty("color", "darkslategray");
+        })
+        currentHumor.style.setProperty("color", "darkslategray");
+        humorRadio.forEach((e) => {
+            e.style.setProperty("backgroundColor", "darkslategray");
+        })
+    } else { //Day
+        imgBarn.src = "/media/Barnv2.png";
+        document.body.style.backgroundImage = "url('/media/background.png')";
+        document.body.style.backgroundColor = "#11ac0d";
+        sky.style.setProperty("display", "fixed");
+        labels.forEach((e) => {
+            e.style.setProperty("color", "papayawhip");
+        })
+        currentHumor.style.setProperty("color", "papayawhip");
+    }
 
     //Resets to default of each humor
     switch (currentHumor.innerText) {
@@ -282,6 +351,12 @@ function mouseleave() {
             break;
         case "Descolada":
             setUpGum(setUpConfigs);
+            break;
+        case "Bufano":
+            setUpShitCrazy(setUpConfigs);
+            break;
+        case "Dormindo":
+            setUpDramin(setUpConfigs);
             break;
         default:
             break;
