@@ -175,9 +175,13 @@ function loadConfig(op) {
             mouseleave();
             break;
         case "Dormindo":
+            eyeL.style.display="none";
+            eyeR.style.display="none";
             configs = getConfigsDramin(configs);
             setUpDramin(setUpConfigs);
             mouseleave();
+            eyeL.style.display="flex";
+            eyeR.style.display="flex";
             break;
         default:
             break;
