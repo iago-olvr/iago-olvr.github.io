@@ -28,6 +28,8 @@ export function getConfigsGum(configs) {
 
     configs.time = "D"
 
+    configs.quotes = ["Eai?", "Qual foi?", "skateskate", "Só deboa?"];
+
     return configs;
 }
 

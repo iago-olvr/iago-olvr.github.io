@@ -41,6 +41,7 @@ let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
 
+let dialog = document.getElementsByClassName("dialog")[0];
 
 // --------------- OBJECTS ---------------
 
@@ -67,6 +68,7 @@ let configs = {
     propTop: null, //The top distance of the prop, if the mood has one
     propLeft: null, //The left distance of the prop, if the mood has one
     time: null, //Day/Night
+    quotes: [], // The quotes to display when interacts
 };
 
 /**
@@ -81,6 +83,7 @@ let setUpConfigs = {
     pupE: pupE, //The initial size of the left pupil
     pupR: pupR, //The initial size of the right pupil
     glasses: glasses, //the initial state of the glasses
+    quotes: dialog, //The quotes to display
 };
 
 // --------------- EVENTS ---------------
@@ -108,6 +111,14 @@ labels.forEach((e) => {
         e.target.style.setProperty("font-style", "normal")
     }
 })
+
+/**
+ * Add the dialog when interacts
+ * @param {*} e 
+ */
+hover.onmouseenter = (e) => {
+    dialog.innerHTML = configs.quotes[Math.floor(Math.random() * configs.quotes.length)];
+}
 
 /**
  * Monitors when the mouse enters the hover area
@@ -175,13 +186,14 @@ function loadConfig(op) {
             mouseleave();
             break;
         case "Dormindo":
-            eyeL.style.display="none";
-            eyeR.style.display="none";
+            //Change the display value to prevent it from appearing incorrectly
+            eyeL.style.display = "none";
+            eyeR.style.display = "none";
             configs = getConfigsDramin(configs);
             setUpDramin(setUpConfigs);
             mouseleave();
-            eyeL.style.display="flex";
-            eyeR.style.display="flex";
+            eyeL.style.display = "flex";
+            eyeR.style.display = "flex";
             break;
         default:
             break;
@@ -298,6 +310,9 @@ function updateRotation(e) {
  * Function that resets the position when leaving the hover area
  */
 function mouseleave() {
+
+    dialog.innerHTML = "";
+
     document.querySelectorAll('.moves').forEach(el => {
         el.style.transitionDuration = "500ms";
         el.style.transform = "rotateX(0deg) rotateY(0deg)";

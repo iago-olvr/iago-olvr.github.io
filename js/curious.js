@@ -28,6 +28,8 @@ export function getConfigsCurious(configs) {
 
     configs.time = "D"
 
+    configs.quotes = ["Que isso?", "Ãh?", "Cadê?", "Um rato?"];
+
     return configs;
 }
 
@@ -46,4 +48,6 @@ export function setUpCurious(setUpConfigs) {
     setUpConfigs.pupR.style.setProperty("width", "26px");
 
     setUpConfigs.glasses.style.display = 'none';
+
+    // setUpConfigs.quotes.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
 }

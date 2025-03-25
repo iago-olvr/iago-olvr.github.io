@@ -28,6 +28,8 @@ export function getConfigsShitCrazy(configs) {
 
     configs.time = "D"
 
+    configs.quotes = ["SAI DA MINHA FRENTE!", "NÃO ME TESTA!", "VOCÊ NÃO QUER VER ONDE ISSO VAI DAR!", "TO AVISANDO!"];
+
     return configs;
 }
 
