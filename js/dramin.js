@@ -17,8 +17,8 @@ export function getConfigsDramin(configs) {
     configs.upDirectionRightY = "-9px"
     configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "109px"
-    configs.positionEylidR = "108px"
+    configs.positionEylidL = "19px"
+    configs.positionEylidR = "18px"
 
     configs.scleraColor = "transparent"
 
@@ -28,6 +28,8 @@ export function getConfigsDramin(configs) {
 
     configs.time = "N"
 
+    configs.quotes = ["zzz..."];
+
     return configs;
 }
 
@@ -36,8 +38,8 @@ export function setUpDramin(setUpConfigs) {
 
     setUpConfigs.eyeL.style.setProperty("background-color", "transparent");
     setUpConfigs.eyeR.style.setProperty("background-color", "transparent");
-    setUpConfigs.eylidL.style.setProperty("top", "109px");
-    setUpConfigs.eylidR.style.setProperty("top", "109px");
+    setUpConfigs.eylidL.style.setProperty("top", "19px");
+    setUpConfigs.eylidR.style.setProperty("top", "19px");
 
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");

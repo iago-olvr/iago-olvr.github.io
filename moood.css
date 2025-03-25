@@ -69,7 +69,6 @@ body {
     width: 210px;
     height: 250px;
     margin-top: 480px;
-    /* border: 5px solid blue; */
 }
 
 .rightBarnPanel {
@@ -77,8 +76,7 @@ body {
     left: 95px;
     width: 190px;
     height: 250px;
-    margin-top: 480px;
-    /* border: 5px solid blue; */
+    margin-top: 480px;   
 }
 
 .status {
@@ -130,7 +128,6 @@ input[type="radio"]:checked + label:before {
     margin-left: -280px;
     margin-top: -155px;
     z-index: -1;
-    /* border: 5px solid blue; */
 }
 
 .hover {
@@ -146,6 +143,18 @@ input[type="radio"]:checked + label:before {
 
 #img {
     filter: drop-shadow(0px 0px 0px black);
+}
+
+.dialog {
+    position: fixed;
+    max-width: 300px;
+    top: 380px;
+    font-weight: 550;
+    font-size: x-large;
+    color: white;
+    text-shadow: 0px 3px black;
+    text-align: center;
+    z-index: 1;
 }
 
 #currentHumor {

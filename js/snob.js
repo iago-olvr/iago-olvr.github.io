@@ -28,6 +28,8 @@ export function getConfigsSnob(configs) {
 
     configs.time = "D"
 
+    configs.quotes = ["Aff!", "Sério?", "Desnecessário.", "Não escosta!", "Sério, não me encosta."];
+
     return configs;
 }
 

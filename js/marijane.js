@@ -28,6 +28,8 @@ export function getConfigsMarijane(configs) {
 
     configs.time = "D"
 
+    configs.quotes = ["...", "...?", "E se tudo na real for só uma invenção da minha cabeça onde eu acho que tô aqui mas na verdade nada disso é real e sinceramente não faz diferença no infinito cosmos que nos rege incessantemente rumo ao fim inerente em nossas existências físicas restando somente as nossas ideias pra trás batata ?"];
+
     return configs;
 }
 
