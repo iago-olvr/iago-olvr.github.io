@@ -12,6 +12,7 @@ body {
     background-repeat: repeat-x;
     background-color: #11ac0d;
     overflow-x: hidden;
+    user-select: none;
 }
 
 .sky {
