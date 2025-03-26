@@ -28,7 +28,7 @@ export function getConfigsRivotril(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Respira, respira...", "Oque você vai fazer???", "Tá tudo bem né?"];
+    configs.quotes = ["Respira, respira...", "Oque você vai fazer???", "Tá tudo bem né?", ""];
 
     return configs;
 }

@@ -28,7 +28,7 @@ export function getConfigsCurious(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Que isso?", "Ãh?", "Cadê?", "Um rato?"];
+    configs.quotes = ["Que isso?", "Ãh?", "Cadê?", "Um rato?", ""];
 
     return configs;
 }
