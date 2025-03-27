@@ -1,7 +1,7 @@
-export function getConfigsCurious(configs) {
+export function getConfigsDVD(configs) {
 
-    configs.coefRot = 30;
-    configs.coefReac = "180ms";
+    configs.coefRot = 0;
+    configs.coefReac = "0ms";
 
     //Direction Toward
     configs.directionShdwX = "-1"
@@ -20,7 +20,7 @@ export function getConfigsCurious(configs) {
     configs.positionEylidL = "-19px"
     configs.positionEylidR = "-19px"
 
-    configs.scleraColor = "white"
+    configs.scleraColor = "transparent"
 
     configs.propName = "null"
     configs.propTop = "0px"
@@ -28,24 +28,24 @@ export function getConfigsCurious(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Que isso?", "Ãh?", "Cadê?", "Um rato?", ""];
+    configs.quotes = [""];
 
     return configs;
 }
 
-export function setUpCurious(setUpConfigs) {
-    setUpConfigs.img.src = "/media/VacaAnimadav3.gif";
+export function setUpDVD(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav9.gif";
 
-    setUpConfigs.eyeL.style.setProperty("background-color", "white");
-    setUpConfigs.eyeR.style.setProperty("background-color", "white");
-    setUpConfigs.eylidL.style.setProperty("top", "-9px");
-    setUpConfigs.eylidR.style.setProperty("top", "-9px");
+    setUpConfigs.eyeL.style.setProperty("background-color", "transparent");
+    setUpConfigs.eyeR.style.setProperty("background-color", "transparent");
+    setUpConfigs.eylidL.style.setProperty("top", "-49px");
+    setUpConfigs.eylidR.style.setProperty("top", "-49px");
 
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "26px");
-    setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.pupE.style.setProperty("width", "0px");
+    setUpConfigs.pupR.style.setProperty("width", "0px");
 
     setUpConfigs.glasses.style.display = 'none';
 }

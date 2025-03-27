@@ -19,6 +19,9 @@ import { setUpShitCrazy } from '/js/shitCrazy.js';
 import { getConfigsDramin } from '/js/dramin.js';
 import { setUpDramin } from '/js/dramin.js';
 
+import { getConfigsDVD } from '/js/dvd.js';
+import { setUpDVD } from '/js/dvd.js';
+
 
 // --------------- VAR ---------------
 
@@ -125,7 +128,9 @@ hover.onmouseenter = (e) => {
  * @param {*} e = the mouse moviment
  */
 hover.onmousemove = (e) => {
-    updateRotation(e);
+    if (currentHumor.innerHTML != "DVD") { //Disable the rotation to the DVD Moood
+        updateRotation(e);
+    }
 };
 
 /**
@@ -194,6 +199,11 @@ function loadConfig(op) {
             mouseleave();
             eyeL.style.display = "flex";
             eyeR.style.display = "flex";
+            break;
+        case "DVD":
+            configs = getConfigsDVD(configs);
+            setUpDVD(setUpConfigs);
+            mouseleave();
             break;
         default:
             break;
