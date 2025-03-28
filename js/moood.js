@@ -25,14 +25,17 @@ import { setUpDVD } from '/js/dvd.js';
 
 // --------------- VAR ---------------
 
+let body = document.body;
+
 let hover = document.getElementsByClassName("hover")[0];
 
 let front = document.getElementsByClassName("front")[0];
 let sky = document.getElementsByClassName("sky")[0];
 let img = document.getElementById("img");
 let imgBarn = document.getElementById("barn");
-
 let currentHumor = document.getElementById("currentHumor");
+let help = document.getElementById("help");
+
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
 
@@ -43,6 +46,8 @@ let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
+let elderlys = document.getElementsByClassName("elderlys")[0];
+
 
 let dialog = document.getElementsByClassName("dialog")[0];
 
@@ -117,7 +122,7 @@ labels.forEach((e) => {
 
 /**
  * Add the dialog when interacts
- * @param {*} e 
+ * @param {*} e = the mouse enter in the hover area
  */
 hover.onmouseenter = (e) => {
     dialog.innerHTML = configs.quotes[Math.floor(Math.random() * configs.quotes.length)];
@@ -140,6 +145,15 @@ hover.onmousemove = (e) => {
 hover.onmouseleave = (e) => {
     mouseleave();
 };
+
+/**
+ * 
+ * @param {*} e = the click in the helper button
+ */
+help.onclick = (e) => {
+    getHelp();
+};
+
 
 // --------------- FUNCTIONS ---------------
 
@@ -339,8 +353,8 @@ function mouseleave() {
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
-        document.body.style.backgroundImage = "url('/media/backgroundv2.png')";
-        document.body.style.backgroundColor = "#074505";
+        body.style.backgroundImage = "url('/media/backgroundv2.png')";
+        body.style.backgroundColor = "#074505";
         sky.style.setProperty("display", "none");
         labels.forEach((e) => {
             e.style.setProperty("color", "darkslategray");
@@ -351,8 +365,8 @@ function mouseleave() {
         })
     } else { //Day
         imgBarn.src = "/media/Barnv2.png";
-        document.body.style.backgroundImage = "url('/media/background.png')";
-        document.body.style.backgroundColor = "#11ac0d";
+        body.style.backgroundImage = "url('/media/background.png')";
+        body.style.backgroundColor = "#11ac0d";
         sky.style.setProperty("display", "block");
         labels.forEach((e) => {
             e.style.setProperty("color", "papayawhip");
@@ -386,6 +400,38 @@ function mouseleave() {
         default:
             break;
     }
+}
+
+/**
+ * Function that call the helper
+ */
+function getHelp() {
+    help.style.setProperty("margin-top", "5px")
+    elderlys.style.display = "inline-block";
+    document.querySelectorAll('.focus').forEach(el => {
+        el.style.filter = "blur(5px)";
+    })
+    setTimeout(disposeHelp, 3700);
+}
+
+/**
+ * Function that retract the helper
+ */
+function disposeHelp() {
+    elderlys.style.setProperty("animation", "byebyeElderlys 500ms");
+    document.querySelectorAll('.focus').forEach(el => {
+        el.style.filter = "none";
+    })
+    setTimeout(resetsHelp, 450);
+}
+
+/**
+ * Function that resets the helper to his original state
+ */
+function resetsHelp() {
+    help.style.setProperty("margin-top", "0px")
+    elderlys.style.display = "none";
+    elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }
 
 initialConfig();
