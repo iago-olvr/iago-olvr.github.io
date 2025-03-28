@@ -122,7 +122,7 @@ labels.forEach((e) => {
 
 /**
  * Add the dialog when interacts
- * @param {*} e 
+ * @param {*} e = the mouse enter in the hover area
  */
 hover.onmouseenter = (e) => {
     dialog.innerHTML = configs.quotes[Math.floor(Math.random() * configs.quotes.length)];
@@ -146,7 +146,10 @@ hover.onmouseleave = (e) => {
     mouseleave();
 };
 
-
+/**
+ * 
+ * @param {*} e = the click in the helper button
+ */
 help.onclick = (e) => {
     getHelp();
 };
@@ -399,6 +402,9 @@ function mouseleave() {
     }
 }
 
+/**
+ * Function that call the helper
+ */
 function getHelp() {
     help.style.setProperty("margin-top", "5px")
     elderlys.style.display = "inline-block";
@@ -408,6 +414,9 @@ function getHelp() {
     setTimeout(disposeHelp, 3700);
 }
 
+/**
+ * Function that retract the helper
+ */
 function disposeHelp() {
     elderlys.style.setProperty("animation", "byebyeElderlys 500ms");
     document.querySelectorAll('.focus').forEach(el => {
@@ -416,6 +425,9 @@ function disposeHelp() {
     setTimeout(resetsHelp, 450);
 }
 
+/**
+ * Function that resets the helper to his original state
+ */
 function resetsHelp() {
     help.style.setProperty("margin-top", "0px")
     elderlys.style.display = "none";
