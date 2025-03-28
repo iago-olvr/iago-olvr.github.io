@@ -33,7 +33,6 @@ let front = document.getElementsByClassName("front")[0];
 let sky = document.getElementsByClassName("sky")[0];
 let img = document.getElementById("img");
 let imgBarn = document.getElementById("barn");
-let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
 let help = document.getElementById("help");
 
@@ -147,13 +146,10 @@ hover.onmouseleave = (e) => {
     mouseleave();
 };
 
+
 help.onclick = (e) => {
     getHelp();
 };
-
-imgElderlys.onclick = (e) => {
-    disposeHelp();
-}
 
 
 // --------------- FUNCTIONS ---------------
@@ -404,10 +400,12 @@ function mouseleave() {
 }
 
 function getHelp() {
+    help.style.setProperty("margin-top", "5px")
     elderlys.style.display = "inline-block";
     document.querySelectorAll('.focus').forEach(el => {
-        el.style.filter = "blur(4px)";
+        el.style.filter = "blur(5px)";
     })
+    setTimeout(disposeHelp, 3700);
 }
 
 function disposeHelp() {
@@ -419,6 +417,7 @@ function disposeHelp() {
 }
 
 function resetsHelp() {
+    help.style.setProperty("margin-top", "0px")
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }

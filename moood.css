@@ -148,7 +148,24 @@ input[type="radio"]:checked + label:before {
     left: 300px;
     z-index: 2;
     display: none;
-    animation: helloElderlys 500ms;
+    animation: helloElderlys 500ms, typing 200ms;
+}
+
+.typewriter {
+    position: absolute;
+    width: 400px;
+    top: 300px;
+    font-weight: 500;
+    font-size: x-large;
+    color: floralwhite;
+    text-shadow: 0px 3px black;
+    text-align: center;
+    z-index: 2;
+}
+
+.typewriter::before {
+    content: "";
+    animation: typing 3.5s linear;
 }
 
 @keyframes helloElderlys {
@@ -167,19 +184,96 @@ input[type="radio"]:checked + label:before {
     }
 }
 
+@keyframes typing {
+    20%,
+    100% {
+        content: "";
+    }
+    21%,
+    99% {
+        content: "P";
+    }
+    22%,
+    98% {
+        content: "Pa";
+    }
+    23%,
+    97% {
+        content: "Pas";
+    }
+    24%,
+    96% {
+        content: "Pass";
+    }
+    25%,
+    95% {
+        content: "Passa ";
+    }
+    26%,
+    94% {
+        content: "Passa o ";
+    }
+    27%,
+    93% {
+        content: "Passa o M";
+    }
+    28%,
+    92% {
+        content: "Passa o Mo";
+    }
+    29%,
+    91% {
+        content: "Passa o Mou";
+    }
+    30%,
+    90% {
+        content: "Passa o Mous";
+    }
+    31%,
+    89% {
+        content: "Passa o Mouse ";
+    }
+    32%,
+    88% {
+        content: "Passa o Mouse n";
+    }
+    33%,
+    87% {
+        content: "Passa o Mouse na ";
+    }
+    34%,
+    86% {
+        content: "Passa o Mouse na V";
+    }
+    35%,
+    85% {
+        content: "Passa o Mouse na Va";
+    }
+    36%,
+    84% {
+        content: "Passa o Mouse na Vac";
+    }
+    37%,
+    83% {
+        content: "Passa o Mouse na Vaca";
+    }
+    38%,
+    82% {
+        content: "Passa o Mouse na Vaca!";
+    }
+}
+
 @keyframes byebyeElderlys {
     0% {
-        /* transform: rotate(15deg); */
         left: 300px;
     }
 
-    20% {
+    15% {
         transform: rotate(15deg);
         left: 300px;
     }
 
     100% {
-        /* transform: rotate(0deg); */
         left: -600px;
     }
 }
