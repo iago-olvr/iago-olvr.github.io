@@ -406,7 +406,7 @@ function mouseleave() {
  * Function that call the helper
  */
 function getHelp() {
-    help.style.setProperty("margin-top", "5px")
+    help.style.setProperty("margin-top", "-78px")
     elderlys.style.display = "inline-block";
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "blur(5px)";
@@ -419,6 +419,7 @@ function getHelp() {
  */
 function disposeHelp() {
     elderlys.style.setProperty("animation", "byebyeElderlys 500ms");
+
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "none";
     })
@@ -429,7 +430,7 @@ function disposeHelp() {
  * Function that resets the helper to his original state
  */
 function resetsHelp() {
-    help.style.setProperty("margin-top", "0px")
+    help.style.setProperty("margin-top", "-80px")
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }
