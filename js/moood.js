@@ -33,8 +33,9 @@ let front = document.getElementsByClassName("front")[0];
 let sky = document.getElementsByClassName("sky")[0];
 let img = document.getElementById("img");
 let imgBarn = document.getElementById("barn");
+let imgHelp = document.getElementById("help");
+let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
-let help = document.getElementById("help");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
@@ -47,7 +48,6 @@ let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
 let elderlys = document.getElementsByClassName("elderlys")[0];
-
 
 let dialog = document.getElementsByClassName("dialog")[0];
 
@@ -150,7 +150,7 @@ hover.onmouseleave = (e) => {
  * 
  * @param {*} e = the click in the helper button
  */
-help.onclick = (e) => {
+imgHelp.onclick = (e) => {
     getHelp();
 };
 
@@ -353,6 +353,9 @@ function mouseleave() {
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
+        imgHelp.src = "/media/PlacaAjudav2.png";
+        imgHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #442d07)")
+        imgElderlys.src = "/media/AmericanGothicSmallv2.png"
         body.style.backgroundImage = "url('/media/backgroundv2.png')";
         body.style.backgroundColor = "#074505";
         sky.style.setProperty("display", "none");
@@ -365,6 +368,9 @@ function mouseleave() {
         })
     } else { //Day
         imgBarn.src = "/media/Barnv2.png";
+        imgHelp.src = "/media/PlacaAjuda.png";
+        imgHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #ab7012)")
+        imgElderlys.src = "/media/AmericanGothicSmall.png"
         body.style.backgroundImage = "url('/media/background.png')";
         body.style.backgroundColor = "#11ac0d";
         sky.style.setProperty("display", "block");
@@ -406,7 +412,7 @@ function mouseleave() {
  * Function that call the helper
  */
 function getHelp() {
-    help.style.setProperty("margin-top", "-78px")
+    imgHelp.style.setProperty("margin-top", "-78px")
     elderlys.style.display = "inline-block";
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "blur(5px)";
@@ -430,7 +436,7 @@ function disposeHelp() {
  * Function that resets the helper to his original state
  */
 function resetsHelp() {
-    help.style.setProperty("margin-top", "-80px")
+    imgHelp.style.setProperty("margin-top", "-80px")
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }

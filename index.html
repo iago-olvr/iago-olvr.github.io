@@ -1,91 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="moood.css" />
+        <link rel="icon" type="image/x-icon" href="/media/Barn.png" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+        <title>Moood</title>
+    </head>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="moood.css" />
-    <link rel="icon" type="image/x-icon" href="/media/Barn.png"/>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
-    <title>Moood</title>
-</head>
-
-<body>
-    <div class="sky focus">
-        <img id="cloud1" src="media/cloud5.png" />
-        <img id="cloud2" src="media/cloud6.png" />
-        <img id="cloud3" src="media/cloud6.png" />
-        <img id="cloud4" src="media/cloud5.png" />
-    </div>
-
-    <div class="leftBarnPanel focus">
-        <div class="humorPanel">
-            <input class="radio" type="radio" id="Curiosa" name="humor" value="curious" checked="checked" />
-            <label for="Curiosa">Curiosa</label><br />
-            <input class="radio" type="radio" id="Esnobe" name="humor" value="snob" />
-            <label for="Esnobe">Esnobe</label><br />
-            <input class="radio" type="radio" id="Chapada" name="humor" value="marijane" />
-            <label for="Chapada">Chapada</label><br />
-            <input class="radio" type="radio" id="Ansiosa" name="humor" value="rivotril" />
-            <label for="Ansiosa">Ansiosa</label><br />
-            <input class="radio" type="radio" id="Descolada" name="humor" value="gum" />
-            <label for="Descolada">Descolada</label><br />
-            <input class="radio" type="radio" id="Bufano" name="humor" value="shitcrazy" />
-            <label for="Bufano">Bufano</label><br />
+    <body>
+        <div class="sky focus">
+            <img id="cloud1" src="media/cloud5.png" />
+            <img id="cloud2" src="media/cloud6.png" />
+            <img id="cloud3" src="media/cloud6.png" />
+            <img id="cloud4" src="media/cloud5.png" />
         </div>
-    </div>
 
-    <div>
-        <div class="status focus">
-            <div style="width: 100%">
-                <span id="currentHumor"></span>
+        <div class="leftBarnPanel focus">
+            <div class="humorPanel">
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Curiosa"
+                    name="humor"
+                    value="curious"
+                    checked="checked"
+                />
+                <label for="Curiosa">Curiosa</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Esnobe"
+                    name="humor"
+                    value="snob"
+                />
+                <label for="Esnobe">Esnobe</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Chapada"
+                    name="humor"
+                    value="marijane"
+                />
+                <label for="Chapada">Chapada</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Ansiosa"
+                    name="humor"
+                    value="rivotril"
+                />
+                <label for="Ansiosa">Ansiosa</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Descolada"
+                    name="humor"
+                    value="gum"
+                />
+                <label for="Descolada">Descolada</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Bufano"
+                    name="humor"
+                    value="shitcrazy"
+                />
+                <label for="Bufano">Bufano</label><br />
             </div>
         </div>
 
-        <div class="barn focus">
-            <img id="barn" src="/media/Barnv2.png" />
-        </div>
-        <div class="hover focus">
-            <div class="cow">
-                <div class="front movel">
-                    <img id="img" src="/media/VacaAnimadav3.gif" class="movel" />
-                </div>
-
-                <div class="eyeL moves">
-                    <div class="eylidL"></div>
-                    <div class="pupE"></div>
-                </div>
-                <div class="eyeR moves">
-                    <div class="eylidR"></div>
-                    <div class="pupR"></div>
+        <div>
+            <div class="status focus">
+                <div style="width: 100%">
+                    <span id="currentHumor"></span>
                 </div>
             </div>
-            <div class="glasses">
-                <img id="glasses" src="/media/oculos.png" />
-                <div class="lensL"></div>
-                <div class="lensR"></div>
+
+            <div class="barn focus">
+                <img id="barn" src="/media/Barnv2.png" />
             </div>
-            <div class="dialog"></div>
+            <div class="hover focus">
+                <div class="cow">
+                    <div class="front movel">
+                        <img
+                            id="img"
+                            src="/media/VacaAnimadav3.gif"
+                            class="movel"
+                        />
+                    </div>
+
+                    <div class="eyeL moves">
+                        <div class="eylidL"></div>
+                        <div class="pupE"></div>
+                    </div>
+                    <div class="eyeR moves">
+                        <div class="eylidR"></div>
+                        <div class="pupR"></div>
+                    </div>
+                </div>
+                <div class="glasses">
+                    <img id="glasses" src="/media/oculos.png" />
+                    <div class="lensL"></div>
+                    <div class="lensR"></div>
+                </div>
+                <div class="dialog"></div>
+            </div>
         </div>
-    </div>
 
-    <div class="help">
-        <img id="help" src="/media/PlacaAjuda.png" style="margin-top: -85px; margin-left: -60px;"/>
-    </div>
-    <div class="elderlys">
-        <img id="elderlys" src="/media/AmericanGothicSmall.png" />
-        <span class="typewriter"></span>
-    </div>
-
-    <div class="rightBarnPanel focus">
-        <div class="humorPanel">
-            <input class="radio" type="radio" id="Dormindo" name="humor" value="dramin" />
-            <label for="Dormindo">Dormindo</label><br />
-            <input class="radio" type="radio" id="DVD" name="humor" value="dvd" />
-            <label for="DVD">DVD</label><br />
+        <div class="help">
+            <img
+                id="help"
+                src="/media/PlacaAjuda.png"
+                style="margin-top: -85px; margin-left: -60px"
+            />
         </div>
-    </div>
-</body>
+        <div class="elderlys">
+            <img id="elderlys" src="/media/AmericanGothicSmall.png" />
+            <span class="typewriter"></span>
+        </div>
 
+        <div class="rightBarnPanel focus">
+            <div class="humorPanel">
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Dormindo"
+                    name="humor"
+                    value="dramin"
+                />
+                <label for="Dormindo">Dormindo</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="DVD"
+                    name="humor"
+                    value="dvd"
+                />
+                <label for="DVD">DVD</label><br />
+            </div>
+        </div>
+    </body>
 </html>
 
 <script type="module" src="js/moood.js"></script>
@@ -106,5 +161,3 @@
 <!-- TODO: Atalhos para os humores (Ctrl+1, Ctrl+2...); -->
 <!-- TODO: Descrição do humor atual como hint no Current ? -->
 <!-- TODO: Modo "Jurassic Park" como jogo ? -->
-
-<!-- FIX: Helper Modo Noturno -->
