@@ -22,6 +22,9 @@ import { setUpDramin } from '/js/dramin.js';
 import { getConfigsDVD } from '/js/dvd.js';
 import { setUpDVD } from '/js/dvd.js';
 
+import { getConfigsMushroom } from '/js/mushroom.js';
+import { setUpMushroom } from '/js/mushroom.js';
+
 
 // --------------- VAR ---------------
 
@@ -219,6 +222,11 @@ function loadConfig(op) {
             setUpDVD(setUpConfigs);
             mouseleave();
             break;
+        case "LSD":
+            configs = getConfigsMushroom(configs);
+            setUpMushroom(setUpConfigs);
+            mouseleave();
+            break;
         default:
             break;
     }
@@ -328,6 +336,15 @@ function updateRotation(e) {
         prop.style.setProperty("top", "-10px")
         prop.style.setProperty("transform", "rotate(10deg)")
     }
+
+    if (currentHumor.innerHTML == "LSD") {
+        let nome = img.src;
+        if (nome.substring(nome.length - 3) != "gif") {
+            img.src = "/media/VacaAnimadav10.gif";
+            //TODO: Atualizar a animação;
+        }
+    }
+
 }
 
 /**
@@ -402,6 +419,9 @@ function mouseleave() {
             break;
         case "Dormindo":
             setUpDramin(setUpConfigs);
+            break;
+        case "LSD":
+            setUpMushroom(setUpConfigs);
             break;
         default:
             break;
