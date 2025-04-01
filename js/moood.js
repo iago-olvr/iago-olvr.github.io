@@ -39,6 +39,7 @@ let imgBarn = document.getElementById("barn");
 let imgHelp = document.getElementById("help");
 let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
+let backEye = document.getElementById("backEye");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
@@ -338,11 +339,8 @@ function updateRotation(e) {
     }
 
     if (currentHumor.innerHTML == "LSD") {
-        let nome = img.src;
-        if (nome.substring(nome.length - 3) != "gif") {
-            img.src = "/media/VacaAnimadav10.gif";
-            //TODO: Atualizar a animação;
-        }
+        eyeR.style.setProperty("animation", "mudarCor 700ms infinite")
+        eyeL.style.setProperty("animation", "mudarCor 700ms infinite")
     }
 
 }

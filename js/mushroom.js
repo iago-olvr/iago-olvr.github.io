@@ -9,16 +9,16 @@ export function getConfigsMushroom(configs) {
 
     configs.negativeDirectionLeftX = "-18px"
     configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "1px"
+    configs.upDirectionLeftY = "-1px"
     configs.downDirectionLeftY = "19px"
 
     configs.negativeDirectionRightX = "-18px"
     configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "1px"
+    configs.upDirectionRightY = "-1px"
     configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "-39px"
-    configs.positionEylidR = "-39px"
+    configs.positionEylidL = "-9px"
+    configs.positionEylidR = "-9px"
 
     configs.scleraColor = "transparent"
 
@@ -38,6 +38,10 @@ export function setUpMushroom(setUpConfigs) {
 
     setUpConfigs.eyeL.style.setProperty("background-color", "transparent");
     setUpConfigs.eyeR.style.setProperty("background-color", "transparent");
+    
+    setUpConfigs.eyeL.style.removeProperty("animation")
+    setUpConfigs.eyeR.style.removeProperty("animation")
+
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
 
@@ -48,4 +52,6 @@ export function setUpMushroom(setUpConfigs) {
     setUpConfigs.pupR.style.setProperty("width", "16px");
 
     setUpConfigs.glasses.style.display = 'none';
+
+    // eyeR.style.setProperty("animation", "mudarCor 250ms infinite")
 }

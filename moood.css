@@ -330,21 +330,45 @@ input[type="radio"]:checked + label:before {
 .eyeL {
     position: absolute;
     display: flex;
-    width: 49px;
+    width: 50px;
     height: 31px;
     justify-content: space-evenly;
     top: 38%;
-    left: 21.9%;
+    left: 21.5%;
 }
 
 .eyeR {
     position: absolute;
     display: flex;
-    width: 49.5px;
+    width: 50px;
     height: 31px;
     justify-content: space-evenly;
     top: 38%;
     left: 47.2%;
+}
+
+@keyframes mudarCor {
+    0% {
+        background-image: repeating-radial-gradient(
+            red,
+            lime 35%,
+            blue 60%
+        );
+    }
+    50% {
+        background-image: repeating-radial-gradient(
+            lime,
+            blue 35%,
+            red 60%
+        );
+    }
+    100% {
+        background-image: repeating-radial-gradient(
+            blue,
+            red 35%,
+            lime 60%
+        );
+    }
 }
 
 .pupE {
