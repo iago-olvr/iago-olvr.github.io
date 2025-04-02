@@ -25,6 +25,9 @@ import { setUpDVD } from '/js/dvd.js';
 import { getConfigsMushroom } from '/js/mushroom.js';
 import { setUpMushroom } from '/js/mushroom.js';
 
+import { getConfigsMlady } from '/js/mlady.js';
+import { setUpMlady } from '/js/mlady.js';
+
 
 // --------------- VAR ---------------
 
@@ -226,6 +229,11 @@ function loadConfig(op) {
             setUpMushroom(setUpConfigs);
             mouseleave();
             break;
+        case "Madame":
+            configs = getConfigsMlady(configs);
+            setUpMlady(setUpConfigs);
+            mouseleave();
+            break;
         default:
             break;
     }
@@ -420,6 +428,9 @@ function mouseleave() {
             break;
         case "LSD":
             setUpMushroom(setUpConfigs);
+            break;
+        case "Madame":
+            setUpMlady(setUpConfigs);
             break;
         default:
             break;
