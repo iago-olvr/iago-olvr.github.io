@@ -44,9 +44,9 @@ export function setUpShitCrazy(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(10deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(-10deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
-    setUpConfigs.pupE.style.setProperty("height", "13px");
+    setUpConfigs.pupL.style.setProperty("height", "13px");
     setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';

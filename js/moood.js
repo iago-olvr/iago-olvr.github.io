@@ -46,7 +46,7 @@ let labels = document.querySelectorAll("label");
 
 let eyeL = document.getElementsByClassName("eyeL")[0];
 let eyeR = document.getElementsByClassName("eyeR")[0];
-let pupE = document.getElementsByClassName("pupE")[0];
+let pupL = document.getElementsByClassName("pupL")[0];
 let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
@@ -92,7 +92,7 @@ let setUpConfigs = {
     eyeR: eyeR, //The color of the sclera of the right eye
     eylidL: eylidL, //The initial position of the left eylid
     eylidR: eylidR, //The initial position of the right eylid
-    pupE: pupE, //The initial size of the left pupil
+    pupL: pupL, //The initial size of the left pupil
     pupR: pupR, //The initial size of the right pupil
     glasses: glasses, //the initial state of the glasses
     quotes: dialog, //The quotes to display
@@ -258,7 +258,7 @@ function updateRotation(e) {
 
     //Transition initial duration
     front.style.transitionDuration = configs.coefReac;
-    pupE.style.transitionDuration = configs.coefReac;
+    pupL.style.transitionDuration = configs.coefReac;
     pupR.style.transitionDuration = configs.coefReac;
 
 
@@ -282,7 +282,7 @@ function updateRotation(e) {
     // ------ Left eye ------
 
     //Rotation
-    pupE.style.transform =
+    pupL.style.transform =
         "rotateX(" +
         (yCenterPoint / configs.coefRot) * -1 +
         "deg) rotateY(" +
@@ -291,15 +291,15 @@ function updateRotation(e) {
 
     //Position
     if (eyeLX > 0) {
-        pupE.style.setProperty("left", configs.positiveDirectionLeftX);
+        pupL.style.setProperty("left", configs.positiveDirectionLeftX);
     } else if (eyeLX < 0) {
-        pupE.style.setProperty("left", configs.negativeDirectionLeftX);
+        pupL.style.setProperty("left", configs.negativeDirectionLeftX);
     }
 
     if (eyeLY > 0) {
-        pupE.style.setProperty("top", configs.downDirectionLeftY);
+        pupL.style.setProperty("top", configs.downDirectionLeftY);
     } else {
-        pupE.style.setProperty("top", configs.upDirectionLeftY);
+        pupL.style.setProperty("top", configs.upDirectionLeftY);
     }
 
     eylidL.style.setProperty("top", configs.positionEylidL);
@@ -340,9 +340,9 @@ function updateRotation(e) {
 
     if (currentHumor.innerHTML == "LSD") {
         pupR.style.setProperty("animation", "mudarCor 700ms infinite")
-        pupE.style.setProperty("animation", "mudarCor 700ms infinite")
+        pupL.style.setProperty("animation", "mudarCor 700ms infinite")
         pupR.style.setProperty("border-radius", "20px")
-        pupE.style.setProperty("border-radius", "20px")
+        pupL.style.setProperty("border-radius", "20px")
     }
 
 }
@@ -360,10 +360,10 @@ function mouseleave() {
         front.style.transform = "rotateX(0deg) rotateY(0deg)";
     })
 
-    pupE.style.setProperty("left", "0px");
+    pupL.style.setProperty("left", "0px");
     pupR.style.setProperty("left", "0px");
 
-    pupE.style.setProperty("top", "0px");
+    pupL.style.setProperty("top", "0px");
     pupR.style.setProperty("top", "0px");
 
     img.style.filter = "drop-shadow(0px 0px 0px black)"
