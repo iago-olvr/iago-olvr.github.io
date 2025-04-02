@@ -339,8 +339,8 @@ function updateRotation(e) {
     }
 
     if (currentHumor.innerHTML == "LSD") {
-        eyeR.style.setProperty("animation", "mudarCor 700ms infinite")
-        eyeL.style.setProperty("animation", "mudarCor 700ms infinite")
+        pupR.style.setProperty("animation", "mudarCor 700ms infinite")
+        pupE.style.setProperty("animation", "mudarCor 700ms infinite")
     }
 
 }

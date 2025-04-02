@@ -1,24 +1,24 @@
 export function getConfigsMushroom(configs) {
 
     configs.coefRot = 30;
-    configs.coefReac = "1800ms";
+    configs.coefReac = "1000ms";
 
     //Direction Toward but slooooooooowly
     configs.directionShdwX = "-1"
     configs.directionShdwY = "1"
 
-    configs.negativeDirectionLeftX = "-18px"
-    configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "-1px"
-    configs.downDirectionLeftY = "19px"
+    configs.negativeDirectionLeftX = "-8px"
+    configs.positiveDirectionLeftX = "11px"
+    configs.upDirectionLeftY = "-19px"
+    configs.downDirectionLeftY = "0px"
 
-    configs.negativeDirectionRightX = "-18px"
-    configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "-1px"
-    configs.downDirectionRightY = "19px"
+    configs.negativeDirectionRightX = "-6px"
+    configs.positiveDirectionRightX = "13px"
+    configs.upDirectionRightY = "-19px"
+    configs.downDirectionRightY = "0px"
 
-    configs.positionEylidL = "-9px"
-    configs.positionEylidR = "-9px"
+    configs.positionEylidL = "-29px"
+    configs.positionEylidR = "-29px"
 
     configs.scleraColor = "transparent"
 
@@ -38,9 +38,9 @@ export function setUpMushroom(setUpConfigs) {
 
     setUpConfigs.eyeL.style.setProperty("background-color", "transparent");
     setUpConfigs.eyeR.style.setProperty("background-color", "transparent");
-    
-    setUpConfigs.eyeL.style.removeProperty("animation")
-    setUpConfigs.eyeR.style.removeProperty("animation")
+
+    setUpConfigs.pupE.style.removeProperty("animation")
+    setUpConfigs.pupR.style.removeProperty("animation")
 
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
@@ -48,10 +48,10 @@ export function setUpMushroom(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "16px");
-    setUpConfigs.pupR.style.setProperty("width", "16px");
+    setUpConfigs.pupE.style.setProperty("width", "32px");
+    setUpConfigs.pupR.style.setProperty("width", "32px");
+    setUpConfigs.pupE.style.setProperty("height", "32px");
+    setUpConfigs.pupR.style.setProperty("height", "32px");   
 
     setUpConfigs.glasses.style.display = 'none';
-
-    // eyeR.style.setProperty("animation", "mudarCor 250ms infinite")
 }

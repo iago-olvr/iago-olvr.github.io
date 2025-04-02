@@ -46,6 +46,8 @@ export function setUpCurious(setUpConfigs) {
 
     setUpConfigs.pupE.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.pupE.style.setProperty("height", "13px");
+    setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
 }

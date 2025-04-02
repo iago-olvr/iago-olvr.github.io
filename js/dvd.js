@@ -46,6 +46,8 @@ export function setUpDVD(setUpConfigs) {
 
     setUpConfigs.pupE.style.setProperty("width", "0px");
     setUpConfigs.pupR.style.setProperty("width", "0px");
+    setUpConfigs.pupE.style.setProperty("height", "13px");
+    setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
 }
