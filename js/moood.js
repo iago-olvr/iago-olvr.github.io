@@ -341,6 +341,8 @@ function updateRotation(e) {
     if (currentHumor.innerHTML == "LSD") {
         pupR.style.setProperty("animation", "mudarCor 700ms infinite")
         pupE.style.setProperty("animation", "mudarCor 700ms infinite")
+        pupR.style.setProperty("border-radius", "20px")
+        pupE.style.setProperty("border-radius", "20px")
     }
 
 }
