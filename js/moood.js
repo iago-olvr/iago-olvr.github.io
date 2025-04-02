@@ -39,7 +39,6 @@ let imgBarn = document.getElementById("barn");
 let imgHelp = document.getElementById("help");
 let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
-let backEye = document.getElementById("backEye");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
@@ -51,9 +50,8 @@ let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
-let elderlys = document.getElementsByClassName("elderlys")[0];
-
 let dialog = document.getElementsByClassName("dialog")[0];
+let elderlys = document.getElementsByClassName("elderlys")[0];
 
 // --------------- OBJECTS ---------------
 

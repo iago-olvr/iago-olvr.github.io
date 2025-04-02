@@ -58,15 +58,6 @@ body {
     animation-delay: -215s;
 }
 
-@keyframes panning {
-    0% {
-        left: 105%;
-    }
-    100% {
-        left: -20%;
-    }
-}
-
 .leftBarnPanel {
     width: 210px;
     height: 250px;
@@ -168,6 +159,146 @@ input[type="radio"]:checked + label:before {
     animation: typing 3.5s linear;
 }
 
+.hover {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 400px;
+    padding: 5%;
+    margin-top: 30%;
+}
+
+#img {
+    filter: drop-shadow(0px 0px 0px black);
+}
+
+.dialog {
+    position: fixed;
+    max-width: 300px;
+    top: 380px;
+    font-weight: 550;
+    font-size: x-large;
+    color: white;
+    text-shadow: 0px 3px black;
+    text-align: center;
+    z-index: 1;
+}
+
+#currentHumor {
+    font-weight: 900;
+    font-size: xx-large;
+    color: papayawhip;
+    text-shadow: 1px 4px black;
+}
+
+.front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    position: relative;
+    background-color: transparent;
+}
+
+.cow {
+    position: relative;
+}
+
+.eyeL {
+    position: absolute;
+    display: flex;
+    width: 50px;
+    height: 31px;
+    justify-content: space-evenly;
+    top: 38%;
+    left: 21.5%;
+}
+
+.eyeR {
+    position: absolute;
+    display: flex;
+    width: 50px;
+    height: 31px;
+    justify-content: space-evenly;
+    top: 38%;
+    left: 47.2%;
+}
+
+.pupL {
+    position: relative;
+    display: flex;
+    width: 26px;
+    height: 13px;
+    background-color: black;
+}
+
+.pupR {
+    position: relative;
+    display: flex;
+    width: 26px;
+    height: 13px;
+    background-color: black;
+}
+
+.eylidL {
+    position: absolute;
+    width: 55px;
+    height: 10px;
+    top: -9px;
+    background-color: black;
+}
+
+.eylidR {
+    position: absolute;
+    width: 55px;
+    height: 10px;
+    top: -9px;
+    background-color: black;
+}
+
+.glasses {
+    position: absolute;
+    top: 45px;
+    left: 110px;
+    display: none;
+    animation: showUp 500ms;
+}
+
+.lensL {
+    position: absolute;
+    width: 50px;
+    height: 42px;
+    top: 145px;
+    left: 89px;
+    background-color: black;
+    opacity: 85%;
+}
+
+.lensR {
+    position: absolute;
+    width: 50px;
+    height: 42px;
+    top: 145px;
+    left: 176px;
+    background-color: black;
+    opacity: 85%;
+}
+
+/* ------ KEYFRAMES ------ */
+
+@keyframes panning {
+    0% {
+        left: 105%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+
 @keyframes helloElderlys {
     0% {
         transform: rotate(-15deg);
@@ -181,6 +312,21 @@ input[type="radio"]:checked + label:before {
     100% {
         transform: rotate(0deg);
         left: 300px;
+    }
+}
+
+@keyframes byebyeElderlys {
+    0% {
+        left: 300px;
+    }
+
+    15% {
+        transform: rotate(15deg);
+        left: 300px;
+    }
+
+    100% {
+        left: -600px;
     }
 }
 
@@ -263,159 +409,19 @@ input[type="radio"]:checked + label:before {
     }
 }
 
-@keyframes byebyeElderlys {
-    0% {
-        left: 300px;
-    }
-
-    15% {
-        transform: rotate(15deg);
-        left: 300px;
-    }
-
-    100% {
-        left: -600px;
-    }
-}
-
-.hover {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 550px;
-    height: 400px;
-    padding: 5%;
-    margin-top: 30%;
-}
-
-#img {
-    filter: drop-shadow(0px 0px 0px black);
-}
-
-.dialog {
-    position: fixed;
-    max-width: 300px;
-    top: 380px;
-    font-weight: 550;
-    font-size: x-large;
-    color: white;
-    text-shadow: 0px 3px black;
-    text-align: center;
-    z-index: 1;
-}
-
-#currentHumor {
-    font-weight: 900;
-    font-size: xx-large;
-    color: papayawhip;
-    text-shadow: 1px 4px black;
-}
-
-.front {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    height: 300px;
-    background-color: white;
-    position: relative;
-    background-color: transparent;
-}
-
-.cow {
-    position: relative;
-}
-
-.eyeL {
-    position: absolute;
-    display: flex;
-    width: 50px;
-    height: 31px;
-    justify-content: space-evenly;
-    top: 38%;
-    left: 21.5%;
-}
-
-.eyeR {
-    position: absolute;
-    display: flex;
-    width: 50px;
-    height: 31px;
-    justify-content: space-evenly;
-    top: 38%;
-    left: 47.2%;
-}
-
 @keyframes mudarCor {
     0% {
-        background-image: repeating-radial-gradient(
-            red,
-            lime 35%,
-            blue 60%
-        );
+        background-image: repeating-radial-gradient(red, lime 35%, blue 60%);
     }
     35% {
-        background-image: repeating-radial-gradient(
-            lime,
-            blue 35%,
-            red 60%
-        );
+        background-image: repeating-radial-gradient(lime, blue 35%, red 60%);
     }
     70% {
-        background-image: repeating-radial-gradient(
-            blue,
-            red 35%,
-            lime 60%
-        );
+        background-image: repeating-radial-gradient(blue, red 35%, lime 60%);
     }
     100% {
-        background-image: repeating-radial-gradient(
-            red,
-            lime 35%,
-            blue 60%
-        );
+        background-image: repeating-radial-gradient(red, lime 35%, blue 60%);
     }
-}
-
-.pupL {
-    position: relative;
-    display: flex;
-    width: 26px;
-    height: 13px;
-    background-color: black;
-}
-
-.pupR {
-    position: relative;
-    display: flex;
-    width: 26px;
-    height: 13px;
-    background-color: black;
-}
-
-.eylidL {
-    position: absolute;
-    width: 55px;
-    height: 10px;
-    top: -9px;
-    background-color: black;
-}
-
-.eylidR {
-    position: absolute;
-    width: 55px;
-    height: 10px;
-    top: -9px;
-    background-color: black;
-}
-
-.glasses {
-    position: absolute;
-    top: 45px;
-    left: 110px;
-    display: none;
-    animation: showUp 500ms;
 }
 
 @keyframes showUp {
@@ -431,24 +437,4 @@ input[type="radio"]:checked + label:before {
     to {
         top: 46px;
     }
-}
-
-.lensL {
-    position: absolute;
-    width: 50px;
-    height: 42px;
-    top: 145px;
-    left: 89px;
-    background-color: black;
-    opacity: 85%;
-}
-
-.lensR {
-    position: absolute;
-    width: 50px;
-    height: 42px;
-    top: 145px;
-    left: 176px;
-    background-color: black;
-    opacity: 85%;
 }

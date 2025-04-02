@@ -51,11 +51,11 @@ export function setUpMushroom(setUpConfigs) {
     setUpConfigs.pupL.style.setProperty("width", "32px");
     setUpConfigs.pupR.style.setProperty("width", "32px");
     setUpConfigs.pupL.style.setProperty("height", "32px");
-    setUpConfigs.pupR.style.setProperty("height", "32px");   
-    // pupR.style.setProperty("border-radius", "20px")
+    setUpConfigs.pupR.style.setProperty("height", "32px");
+
     setUpConfigs.pupL.style.setProperty("border-radius", "00px")
     setUpConfigs.pupR.style.setProperty("border-radius", "00px")
 
     setUpConfigs.glasses.style.display = 'none';
-    
+
 }
