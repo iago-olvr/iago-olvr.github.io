@@ -226,6 +226,7 @@ input[type="radio"]:checked + label:before {
     justify-content: space-evenly;
     top: 38%;
     left: 47.2%;
+    /* overflow: hidden; */
 }
 
 .pupL {
@@ -408,7 +409,7 @@ input[type="radio"]:checked + label:before {
         content: "Passa o Mouse na Vaca!";
     }
 }
-
+/* 
 @keyframes mudarCor {
     0% {
         background-image: repeating-radial-gradient(red, lime 35%, blue 60%);
@@ -422,7 +423,7 @@ input[type="radio"]:checked + label:before {
     100% {
         background-image: repeating-radial-gradient(red, lime 35%, blue 60%);
     }
-}
+} */
 
 @keyframes showUp {
     100% {
@@ -437,4 +438,8 @@ input[type="radio"]:checked + label:before {
     to {
         top: 46px;
     }
+}
+
+.teste {
+    overflow: hidden;
 }

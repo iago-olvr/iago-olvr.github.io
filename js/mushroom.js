@@ -39,8 +39,8 @@ export function setUpMushroom(setUpConfigs) {
     setUpConfigs.eyeL.style.setProperty("background-color", "transparent");
     setUpConfigs.eyeR.style.setProperty("background-color", "transparent");
 
-    setUpConfigs.pupL.style.removeProperty("animation")
-    setUpConfigs.pupR.style.removeProperty("animation")
+    setUpConfigs.pupL.style.removeProperty("box-shadow")
+    setUpConfigs.pupR.style.removeProperty("box-shadow")
 
     setUpConfigs.eylidL.style.setProperty("top", "-9px");
     setUpConfigs.eylidR.style.setProperty("top", "-9px");
@@ -48,13 +48,13 @@ export function setUpMushroom(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupL.style.setProperty("width", "32px");
-    setUpConfigs.pupR.style.setProperty("width", "32px");
-    setUpConfigs.pupL.style.setProperty("height", "32px");
-    setUpConfigs.pupR.style.setProperty("height", "32px");
+    setUpConfigs.pupL.style.setProperty("width", "39px");
+    setUpConfigs.pupR.style.setProperty("width", "39px");
+    setUpConfigs.pupL.style.setProperty("height", "39px");
+    setUpConfigs.pupR.style.setProperty("height", "39px");
 
-    setUpConfigs.pupL.style.setProperty("border-radius", "00px")
-    setUpConfigs.pupR.style.setProperty("border-radius", "00px")
+    setUpConfigs.pupL.style.setProperty("border-radius", "0px")
+    setUpConfigs.pupR.style.setProperty("border-radius", "0px")
 
     setUpConfigs.glasses.style.display = 'none';
 

@@ -56,6 +56,8 @@ let glasses = document.getElementsByClassName("glasses")[0];
 let dialog = document.getElementsByClassName("dialog")[0];
 let elderlys = document.getElementsByClassName("elderlys")[0];
 
+let id;
+
 // --------------- OBJECTS ---------------
 
 /**
@@ -140,6 +142,12 @@ hover.onmouseenter = (e) => {
 hover.onmousemove = (e) => {
     if (currentHumor.innerHTML != "DVD") { //Disable the rotation to the DVD Moood
         updateRotation(e);
+    }
+
+    if (currentHumor.innerHTML == "LSD") {
+        if (!id) {
+            id = setInterval(changeColor, 500);
+        }
     }
 };
 
@@ -345,8 +353,9 @@ function updateRotation(e) {
     }
 
     if (currentHumor.innerHTML == "LSD") {
-        pupR.style.setProperty("animation", "mudarCor 700ms infinite")
-        pupL.style.setProperty("animation", "mudarCor 700ms infinite")
+        // pupR.style.setProperty("animation", "mudarCor 700ms infinite")
+        // pupL.style.setProperty("animation", "mudarCor 700ms infinite")
+
         pupR.style.setProperty("border-radius", "20px")
         pupL.style.setProperty("border-radius", "20px")
     }
@@ -428,6 +437,8 @@ function mouseleave() {
             break;
         case "LSD":
             setUpMushroom(setUpConfigs);
+            clearInterval(id);
+            id = undefined;
             break;
         case "Madame":
             setUpMlady(setUpConfigs);
@@ -469,5 +480,39 @@ function resetsHelp() {
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }
+
+let colorIndex = -1;
+const colors = ["red", "blue", "green", "yellow", "purple", "cyan", "orange"];
+
+function changeColor() {
+
+
+
+    // Escolhe uma cor aleatória
+
+
+    // let cor1 = colors[Math.floor(Math.random() * colors.length)];
+    // let cor2 = colors[Math.floor(Math.random() * colors.length)];
+    // let cor3 = colors[Math.floor(Math.random() * colors.length)];
+    // let cor4 = colors[Math.floor(Math.random() * colors.length)];
+    // let cor5 = colors[Math.floor(Math.random() * colors.length)];
+    // let cor6 = colors[Math.floor(Math.random() * colors.length)];
+
+    pupR.style.setProperty("box-shadow", "0px 0px 3px 2px " + colors[getIndex()] + " inset, 0px 0px 3px 4px " + colors[getIndex()] + " inset, 0px 0px 3px 6px " + colors[getIndex()] + " inset, 0px 0px 3px 8px " + colors[getIndex()] + " inset, 0px 0px 3px 10px " + colors[getIndex()] + " inset, 0px 0px 3px 12px " + colors[getIndex()] + " inset")
+    pupL.style.setProperty("box-shadow", "0px 0px 3px 2px " + colors[getIndex()] + " inset, 0px 0px 3px 4px " + colors[getIndex()] + " inset, 0px 0px 3px 6px " + colors[getIndex()] + " inset, 0px 0px 3px 8px " + colors[getIndex()] + " inset, 0px 0px 3px 10px " + colors[getIndex()] + " inset, 0px 0px 3px 12px " + colors[getIndex()] + " inset")
+
+}
+
+function getIndex() {
+
+    colorIndex++;
+
+    if (colorIndex == colors.length - 1) {
+        colorIndex = 0
+    }
+    return colorIndex;
+
+}
+
 
 initialConfig();
