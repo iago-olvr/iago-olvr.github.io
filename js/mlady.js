@@ -1,40 +1,40 @@
-export function getConfigsCurious(configs) {
+export function getConfigsMlady(configs) {
 
     configs.coefRot = 30;
     configs.coefReac = "180ms";
 
-    //Direction Toward
-    configs.directionShdwX = "-1"
-    configs.directionShdwY = "1"
+    //Direction Away From
+    configs.directionShdwX = "1"
+    configs.directionShdwY = "-1"
 
-    configs.negativeDirectionLeftX = "-18px"
-    configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "-9px"
-    configs.downDirectionLeftY = "19px"
+    configs.negativeDirectionLeftX = "20px"
+    configs.positiveDirectionLeftX = "-18px"
+    configs.upDirectionLeftY = "18px"
+    configs.downDirectionLeftY = "1px"
 
-    configs.negativeDirectionRightX = "-18px"
-    configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "-9px"
-    configs.downDirectionRightY = "19px"
+    configs.negativeDirectionRightX = "20px"
+    configs.positiveDirectionRightX = "-18px"
+    configs.upDirectionRightY = "18px"
+    configs.downDirectionRightY = "1px"
 
-    configs.positionEylidL = "-19px"
-    configs.positionEylidR = "-19px"
+    configs.positionEylidL = "-9px"
+    configs.positionEylidR = "-9px"
 
     configs.scleraColor = "white"
 
-    configs.propName = "null"
+    configs.propName = "glassesv2"
     configs.propTop = "0px"
     configs.propLeft = "0px"
 
     configs.time = "D"
 
-    configs.quotes = ["Que isso?", "Ãh?", "Cadê?", "Um rato?"];
+    configs.quotes = ["Pobres...", "Onde está meu marido Charles?", "Sou Realeza querida"];
 
     return configs;
 }
 
-export function setUpCurious(setUpConfigs) {
-    setUpConfigs.img.src = "/media/VacaAnimadav3.gif";
+export function setUpMlady(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav11.gif";
 
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");

@@ -28,7 +28,7 @@ export function getConfigsGum(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Eai?", "Qual foi?", "skateskate", "Só deboa?", ""];
+    configs.quotes = ["Eai?", "Qual foi?", "skateskate", "Só deboa?"];
 
     return configs;
 }
@@ -44,8 +44,10 @@ export function setUpGum(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("height", "13px");
+    setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'inline-block';
     setUpConfigs.glasses.style.setProperty("top", "45px");

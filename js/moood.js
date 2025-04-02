@@ -22,6 +22,12 @@ import { setUpDramin } from '/js/dramin.js';
 import { getConfigsDVD } from '/js/dvd.js';
 import { setUpDVD } from '/js/dvd.js';
 
+import { getConfigsMushroom } from '/js/mushroom.js';
+import { setUpMushroom } from '/js/mushroom.js';
+
+import { getConfigsMlady } from '/js/mlady.js';
+import { setUpMlady } from '/js/mlady.js';
+
 
 // --------------- VAR ---------------
 
@@ -33,23 +39,22 @@ let front = document.getElementsByClassName("front")[0];
 let sky = document.getElementsByClassName("sky")[0];
 let img = document.getElementById("img");
 let imgBarn = document.getElementById("barn");
+let imgHelp = document.getElementById("help");
+let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
-let help = document.getElementById("help");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
 
 let eyeL = document.getElementsByClassName("eyeL")[0];
 let eyeR = document.getElementsByClassName("eyeR")[0];
-let pupE = document.getElementsByClassName("pupE")[0];
+let pupL = document.getElementsByClassName("pupL")[0];
 let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
-let elderlys = document.getElementsByClassName("elderlys")[0];
-
-
 let dialog = document.getElementsByClassName("dialog")[0];
+let elderlys = document.getElementsByClassName("elderlys")[0];
 
 // --------------- OBJECTS ---------------
 
@@ -88,7 +93,7 @@ let setUpConfigs = {
     eyeR: eyeR, //The color of the sclera of the right eye
     eylidL: eylidL, //The initial position of the left eylid
     eylidR: eylidR, //The initial position of the right eylid
-    pupE: pupE, //The initial size of the left pupil
+    pupL: pupL, //The initial size of the left pupil
     pupR: pupR, //The initial size of the right pupil
     glasses: glasses, //the initial state of the glasses
     quotes: dialog, //The quotes to display
@@ -150,7 +155,7 @@ hover.onmouseleave = (e) => {
  * 
  * @param {*} e = the click in the helper button
  */
-help.onclick = (e) => {
+imgHelp.onclick = (e) => {
     getHelp();
 };
 
@@ -219,6 +224,16 @@ function loadConfig(op) {
             setUpDVD(setUpConfigs);
             mouseleave();
             break;
+        case "LSD":
+            configs = getConfigsMushroom(configs);
+            setUpMushroom(setUpConfigs);
+            mouseleave();
+            break;
+        case "Madame":
+            configs = getConfigsMlady(configs);
+            setUpMlady(setUpConfigs);
+            mouseleave();
+            break;
         default:
             break;
     }
@@ -249,7 +264,7 @@ function updateRotation(e) {
 
     //Transition initial duration
     front.style.transitionDuration = configs.coefReac;
-    pupE.style.transitionDuration = configs.coefReac;
+    pupL.style.transitionDuration = configs.coefReac;
     pupR.style.transitionDuration = configs.coefReac;
 
 
@@ -273,7 +288,7 @@ function updateRotation(e) {
     // ------ Left eye ------
 
     //Rotation
-    pupE.style.transform =
+    pupL.style.transform =
         "rotateX(" +
         (yCenterPoint / configs.coefRot) * -1 +
         "deg) rotateY(" +
@@ -282,15 +297,15 @@ function updateRotation(e) {
 
     //Position
     if (eyeLX > 0) {
-        pupE.style.setProperty("left", configs.positiveDirectionLeftX);
+        pupL.style.setProperty("left", configs.positiveDirectionLeftX);
     } else if (eyeLX < 0) {
-        pupE.style.setProperty("left", configs.negativeDirectionLeftX);
+        pupL.style.setProperty("left", configs.negativeDirectionLeftX);
     }
 
     if (eyeLY > 0) {
-        pupE.style.setProperty("top", configs.downDirectionLeftY);
+        pupL.style.setProperty("top", configs.downDirectionLeftY);
     } else {
-        pupE.style.setProperty("top", configs.upDirectionLeftY);
+        pupL.style.setProperty("top", configs.upDirectionLeftY);
     }
 
     eylidL.style.setProperty("top", configs.positionEylidL);
@@ -328,6 +343,14 @@ function updateRotation(e) {
         prop.style.setProperty("top", "-10px")
         prop.style.setProperty("transform", "rotate(10deg)")
     }
+
+    if (currentHumor.innerHTML == "LSD") {
+        pupR.style.setProperty("animation", "mudarCor 700ms infinite")
+        pupL.style.setProperty("animation", "mudarCor 700ms infinite")
+        pupR.style.setProperty("border-radius", "20px")
+        pupL.style.setProperty("border-radius", "20px")
+    }
+
 }
 
 /**
@@ -343,16 +366,19 @@ function mouseleave() {
         front.style.transform = "rotateX(0deg) rotateY(0deg)";
     })
 
-    pupE.style.setProperty("left", "0px");
+    pupL.style.setProperty("left", "0px");
     pupR.style.setProperty("left", "0px");
 
-    pupE.style.setProperty("top", "0px");
+    pupL.style.setProperty("top", "0px");
     pupR.style.setProperty("top", "0px");
 
     img.style.filter = "drop-shadow(0px 0px 0px black)"
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
+        imgHelp.src = "/media/PlacaAjudav2.png";
+        imgHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #442d07)")
+        imgElderlys.src = "/media/AmericanGothicSmallv2.png"
         body.style.backgroundImage = "url('/media/backgroundv2.png')";
         body.style.backgroundColor = "#074505";
         sky.style.setProperty("display", "none");
@@ -365,6 +391,9 @@ function mouseleave() {
         })
     } else { //Day
         imgBarn.src = "/media/Barnv2.png";
+        imgHelp.src = "/media/PlacaAjuda.png";
+        imgHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #ab7012)")
+        imgElderlys.src = "/media/AmericanGothicSmall.png"
         body.style.backgroundImage = "url('/media/background.png')";
         body.style.backgroundColor = "#11ac0d";
         sky.style.setProperty("display", "block");
@@ -397,6 +426,12 @@ function mouseleave() {
         case "Dormindo":
             setUpDramin(setUpConfigs);
             break;
+        case "LSD":
+            setUpMushroom(setUpConfigs);
+            break;
+        case "Madame":
+            setUpMlady(setUpConfigs);
+            break;
         default:
             break;
     }
@@ -406,7 +441,7 @@ function mouseleave() {
  * Function that call the helper
  */
 function getHelp() {
-    help.style.setProperty("margin-top", "5px")
+    imgHelp.style.setProperty("margin-top", "-78px")
     elderlys.style.display = "inline-block";
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "blur(5px)";
@@ -419,6 +454,7 @@ function getHelp() {
  */
 function disposeHelp() {
     elderlys.style.setProperty("animation", "byebyeElderlys 500ms");
+
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "none";
     })
@@ -429,7 +465,7 @@ function disposeHelp() {
  * Function that resets the helper to his original state
  */
 function resetsHelp() {
-    help.style.setProperty("margin-top", "0px")
+    imgHelp.style.setProperty("margin-top", "-80px")
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }

@@ -28,7 +28,7 @@ export function getConfigsSnob(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Aff!", "Sério?", "Desnecessário.", "Não escosta!", "Sério, não me encosta.", ""];
+    configs.quotes = ["Aff!", "Sério?", "Desnecessário.", "Não escosta!", "Sério, não me encosta."];
 
     return configs;
 }
@@ -44,8 +44,10 @@ export function setUpSnob(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("height", "13px");
+    setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
 }

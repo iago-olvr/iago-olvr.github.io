@@ -28,7 +28,7 @@ export function getConfigsShitCrazy(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["SAI DA MINHA FRENTE!", "NÃO ME TESTA!", "VOCÊ NÃO QUER VER ONDE ISSO VAI DAR!", "TO AVISANDO!", ""];
+    configs.quotes = ["SAI DA MINHA FRENTE!", "NÃO ME TESTA!", "VOCÊ NÃO QUER VER ONDE ISSO VAI DAR!", "TO AVISANDO!"];
 
     return configs;
 }
@@ -44,8 +44,10 @@ export function setUpShitCrazy(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(10deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(-10deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("width", "26px");
     setUpConfigs.pupR.style.setProperty("width", "26px");
+    setUpConfigs.pupL.style.setProperty("height", "13px");
+    setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
 }

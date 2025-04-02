@@ -28,7 +28,7 @@ export function getConfigsRivotril(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Respira, respira...", "Oque você vai fazer???", "Tá tudo bem né?", ""];
+    configs.quotes = ["Respira, respira...", "Oque você vai fazer???", "Tá tudo bem né?"];
 
     return configs;
 }
@@ -44,8 +44,10 @@ export function setUpRivotril(setUpConfigs) {
     setUpConfigs.eylidL.style.setProperty("transform", "rotate(0deg)");
     setUpConfigs.eylidR.style.setProperty("transform", "rotate(0deg)");
 
-    setUpConfigs.pupE.style.setProperty("width", "16px");
+    setUpConfigs.pupL.style.setProperty("width", "16px");
     setUpConfigs.pupR.style.setProperty("width", "16px");
+    setUpConfigs.pupL.style.setProperty("height", "13px");
+    setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
 }

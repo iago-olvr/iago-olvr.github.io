@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="moood.css" />
+        <link rel="icon" type="image/x-icon" href="/media/Barn.png" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=0.5" />
-        <title>Document</title>
+        <title>Moood</title>
     </head>
 
     <body>
@@ -91,11 +92,12 @@
 
                     <div class="eyeL moves">
                         <div class="eylidL"></div>
-                        <div class="pupE"></div>
+                        <div class="pupL"></div>
                     </div>
                     <div class="eyeR moves">
                         <div class="eylidR"></div>
                         <div class="pupR"></div>
+                        <mask id="backEye"></mask>
                     </div>
                 </div>
                 <div class="glasses">
@@ -108,7 +110,11 @@
         </div>
 
         <div class="help">
-            <img id="help" src="/media/PlacaAjuda.png" />
+            <img
+                id="help"
+                src="/media/PlacaAjuda.png"
+                style="margin-top: -85px; margin-left: -60px"
+            />
         </div>
         <div class="elderlys">
             <img id="elderlys" src="/media/AmericanGothicSmall.png" />
@@ -133,6 +139,22 @@
                     value="dvd"
                 />
                 <label for="DVD">DVD</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="LSD"
+                    name="humor"
+                    value="lsd"
+                />
+                <label for="LSD">LSD</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Madame"
+                    name="humor"
+                    value="m'lady"
+                />
+                <label for="Madame">Madame</label><br />
             </div>
         </div>
     </body>
@@ -148,8 +170,7 @@
 <!-- TODO: Sonolenta(Chapada sem olho vermelho e dorme) -->
 <!-- TODO: Apaixonada(Olho de Coração, Animação babando) -->
 <!-- TODO: Veiaco(Olhos Serrados, Suspeito, animação lenta) -->
-<!-- TODO: Mushrooms:(HUE.rotate)-->
-<!-- TODO: Madame(Lenço na cabeça, bolsinha de lado, meio esnobe) -->
+<!-- TODO: Disco(DiscoBall, Afro, Cores) -->
 
 <!-- TODO: Animações no celeiro(porta balançando); -->
 <!-- TODO: Modo aleatório ? -->
