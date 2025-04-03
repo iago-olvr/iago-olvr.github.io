@@ -56,6 +56,12 @@ let glasses = document.getElementsByClassName("glasses")[0];
 let dialog = document.getElementsByClassName("dialog")[0];
 let elderlys = document.getElementsByClassName("elderlys")[0];
 
+let id;
+let hue = 0;
+let colorIndex = -1;
+let requestId;
+const colors = ["red", "blue", "green", "yellow", "cyan", "orange"];
+
 // --------------- OBJECTS ---------------
 
 /**
@@ -140,6 +146,13 @@ hover.onmouseenter = (e) => {
 hover.onmousemove = (e) => {
     if (currentHumor.innerHTML != "DVD") { //Disable the rotation to the DVD Moood
         updateRotation(e);
+    }
+
+    if (currentHumor.innerHTML == "LSD") {
+        if (!id) {
+            id = setInterval(changeColor, 500);
+            animateHue();
+        }
     }
 };
 
@@ -345,8 +358,9 @@ function updateRotation(e) {
     }
 
     if (currentHumor.innerHTML == "LSD") {
-        pupR.style.setProperty("animation", "mudarCor 700ms infinite")
-        pupL.style.setProperty("animation", "mudarCor 700ms infinite")
+        // pupR.style.setProperty("animation", "mudarCor 700ms infinite")
+        // pupL.style.setProperty("animation", "mudarCor 700ms infinite")
+
         pupR.style.setProperty("border-radius", "20px")
         pupL.style.setProperty("border-radius", "20px")
     }
@@ -372,7 +386,10 @@ function mouseleave() {
     pupL.style.setProperty("top", "0px");
     pupR.style.setProperty("top", "0px");
 
-    img.style.filter = "drop-shadow(0px 0px 0px black)"
+    img.style.filter = "drop-shadow(0px 0px 0px black)";
+    body.style.removeProperty("filter");
+    cancelAnimationFrame(requestId);
+    requestId = undefined;
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
@@ -428,6 +445,8 @@ function mouseleave() {
             break;
         case "LSD":
             setUpMushroom(setUpConfigs);
+            clearInterval(id);
+            id = undefined;
             break;
         case "Madame":
             setUpMlady(setUpConfigs);
@@ -469,5 +488,45 @@ function resetsHelp() {
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }
+
+/**
+ * Function thar change the color of the eye in LSD Moood
+ */
+function changeColor() {
+
+    let cor1 = colors[getIndex()];
+    let cor2 = colors[getIndex()];
+    let cor3 = colors[getIndex()];
+    let cor4 = colors[getIndex()];
+    let cor5 = colors[getIndex()];
+    let cor6 = colors[getIndex()];
+
+    pupR.style.setProperty("box-shadow", "0px 0px 3px 3px " + cor1 + " inset, 0px 0px 3px 6px " + cor2 + " inset, 0px 0px 3px 9px " + cor3 + " inset, 0px 0px 3px 12px " + cor4 + " inset, 0px 0px 3px 15px " + cor5 + " inset, 0px 0px 3px 18px " + cor6 + " inset")
+    pupL.style.setProperty("box-shadow", "0px 0px 3px 3px " + cor1 + " inset, 0px 0px 3px 6px " + cor2 + " inset, 0px 0px 3px 9px " + cor3 + " inset, 0px 0px 3px 12px " + cor4 + " inset, 0px 0px 3px 15px " + cor5 + " inset, 0px 0px 3px 18px " + cor6 + " inset")
+
+}
+
+/**
+ * Function thar ramdomizes and put in a loop the colors
+ * @returns the index of the next color in the sequence
+ */
+function getIndex() {
+    colorIndex++;
+
+    if (colorIndex == colors.length - 1) {
+        colorIndex = 0
+    }
+    return colorIndex;
+}
+
+/**
+ * Function that animates the Hue-Rotate on the body
+ */
+function animateHue(item) {
+    hue = (hue + 1) % 360;
+    body.style.setProperty("filter", "hue-rotate(" + hue + "deg)");
+    requestId = requestAnimationFrame(animateHue);
+}
+
 
 initialConfig();

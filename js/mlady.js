@@ -28,7 +28,7 @@ export function getConfigsMlady(configs) {
 
     configs.time = "D"
 
-    configs.quotes = ["Pobres...", "Onde está meu marido Charles?", "Sou Realeza querida"];
+    configs.quotes = ["Pobres...", "Onde está meu marido Charles?", "Sou Realeza querida", "Não preciso disso..."];
 
     return configs;
 }
