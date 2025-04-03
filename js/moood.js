@@ -57,6 +57,10 @@ let dialog = document.getElementsByClassName("dialog")[0];
 let elderlys = document.getElementsByClassName("elderlys")[0];
 
 let id;
+let hue = 0;
+let colorIndex = -1;
+let requestId;
+const colors = ["red", "blue", "green", "yellow", "cyan", "orange"];
 
 // --------------- OBJECTS ---------------
 
@@ -147,6 +151,7 @@ hover.onmousemove = (e) => {
     if (currentHumor.innerHTML == "LSD") {
         if (!id) {
             id = setInterval(changeColor, 500);
+            animateHue();
         }
     }
 };
@@ -381,7 +386,10 @@ function mouseleave() {
     pupL.style.setProperty("top", "0px");
     pupR.style.setProperty("top", "0px");
 
-    img.style.filter = "drop-shadow(0px 0px 0px black)"
+    img.style.filter = "drop-shadow(0px 0px 0px black)";
+    body.style.removeProperty("filter");
+    cancelAnimationFrame(requestId);
+    requestId = undefined;
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
@@ -481,37 +489,33 @@ function resetsHelp() {
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }
 
-let colorIndex = -1;
-const colors = ["red", "blue", "green", "yellow", "purple", "cyan", "orange"];
-
 function changeColor() {
 
+    let cor1 = colors[getIndex()];
+    let cor2 = colors[getIndex()];
+    let cor3 = colors[getIndex()];
+    let cor4 = colors[getIndex()];
+    let cor5 = colors[getIndex()];
+    let cor6 = colors[getIndex()];
 
-
-    // Escolhe uma cor aleatória
-
-
-    // let cor1 = colors[Math.floor(Math.random() * colors.length)];
-    // let cor2 = colors[Math.floor(Math.random() * colors.length)];
-    // let cor3 = colors[Math.floor(Math.random() * colors.length)];
-    // let cor4 = colors[Math.floor(Math.random() * colors.length)];
-    // let cor5 = colors[Math.floor(Math.random() * colors.length)];
-    // let cor6 = colors[Math.floor(Math.random() * colors.length)];
-
-    pupR.style.setProperty("box-shadow", "0px 0px 3px 2px " + colors[getIndex()] + " inset, 0px 0px 3px 4px " + colors[getIndex()] + " inset, 0px 0px 3px 6px " + colors[getIndex()] + " inset, 0px 0px 3px 8px " + colors[getIndex()] + " inset, 0px 0px 3px 10px " + colors[getIndex()] + " inset, 0px 0px 3px 12px " + colors[getIndex()] + " inset")
-    pupL.style.setProperty("box-shadow", "0px 0px 3px 2px " + colors[getIndex()] + " inset, 0px 0px 3px 4px " + colors[getIndex()] + " inset, 0px 0px 3px 6px " + colors[getIndex()] + " inset, 0px 0px 3px 8px " + colors[getIndex()] + " inset, 0px 0px 3px 10px " + colors[getIndex()] + " inset, 0px 0px 3px 12px " + colors[getIndex()] + " inset")
+    pupR.style.setProperty("box-shadow", "0px 0px 3px 3px " + cor1 + " inset, 0px 0px 3px 6px " + cor2 + " inset, 0px 0px 3px 9px " + cor3 + " inset, 0px 0px 3px 12px " + cor4 + " inset, 0px 0px 3px 15px " + cor5 + " inset, 0px 0px 3px 18px " + cor6 + " inset")
+    pupL.style.setProperty("box-shadow", "0px 0px 3px 3px " + cor1 + " inset, 0px 0px 3px 6px " + cor2 + " inset, 0px 0px 3px 9px " + cor3 + " inset, 0px 0px 3px 12px " + cor4 + " inset, 0px 0px 3px 15px " + cor5 + " inset, 0px 0px 3px 18px " + cor6 + " inset")
 
 }
 
 function getIndex() {
-
     colorIndex++;
 
     if (colorIndex == colors.length - 1) {
         colorIndex = 0
     }
     return colorIndex;
+}
 
+function animateHue() {
+    hue = (hue + 1) % 360;
+    body.style.setProperty("filter", "hue-rotate(" + hue + "deg)");
+    requestId = requestAnimationFrame(animateHue);
 }
 
 
