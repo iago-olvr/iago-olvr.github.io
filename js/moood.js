@@ -489,6 +489,9 @@ function resetsHelp() {
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }
 
+/**
+ * Function thar change the color of the eye in LSD Moood
+ */
 function changeColor() {
 
     let cor1 = colors[getIndex()];
@@ -503,6 +506,10 @@ function changeColor() {
 
 }
 
+/**
+ * Function thar ramdomizes and put in a loop the colors
+ * @returns the index of the next color in the sequence
+ */
 function getIndex() {
     colorIndex++;
 
@@ -512,7 +519,10 @@ function getIndex() {
     return colorIndex;
 }
 
-function animateHue() {
+/**
+ * Function that animates the Hue-Rotate on the body
+ */
+function animateHue(item) {
     hue = (hue + 1) % 360;
     body.style.setProperty("filter", "hue-rotate(" + hue + "deg)");
     requestId = requestAnimationFrame(animateHue);
