@@ -28,7 +28,7 @@ export function getConfigsDramin(configs) {
 
     configs.time = "N"
 
-    configs.quotes = ["zzz..."];
+    configs.quotes = ["zzz...", "<span style='color: green'>🐑<br>🐑,,,<span style='color: peru'>#</span>,,,🐑</span>"];
 
     return configs;
 }

@@ -409,21 +409,6 @@ input[type="radio"]:checked + label:before {
         content: "Passa o Mouse na Vaca!";
     }
 }
-/* 
-@keyframes mudarCor {
-    0% {
-        background-image: repeating-radial-gradient(red, lime 35%, blue 60%);
-    }
-    35% {
-        background-image: repeating-radial-gradient(lime, blue 35%, red 60%);
-    }
-    70% {
-        background-image: repeating-radial-gradient(blue, red 35%, lime 60%);
-    }
-    100% {
-        background-image: repeating-radial-gradient(red, lime 35%, blue 60%);
-    }
-} */
 
 @keyframes showUp {
     100% {
