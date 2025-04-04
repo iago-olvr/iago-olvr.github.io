@@ -22,7 +22,7 @@ export function getConfigsMlady(configs) {
 
     configs.scleraColor = "white"
 
-    configs.propName = "glassesv2"
+    configs.propName = "null"
     configs.propTop = "0px"
     configs.propLeft = "0px"
 
