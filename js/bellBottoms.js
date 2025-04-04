@@ -1,40 +1,40 @@
-export function getConfigsMlady(configs) {
+export function getConfigsBellBottoms(configs) {
 
     configs.coefRot = 30;
     configs.coefReac = "180ms";
 
-    //Direction Away From
-    configs.directionShdwX = "1"
-    configs.directionShdwY = "-1"
+    //Direction Toward
+    configs.directionShdwX = "-1"
+    configs.directionShdwY = "1"
 
-    configs.negativeDirectionLeftX = "20px"
-    configs.positiveDirectionLeftX = "-18px"
-    configs.upDirectionLeftY = "18px"
-    configs.downDirectionLeftY = "1px"
+    configs.negativeDirectionLeftX = "-18px"
+    configs.positiveDirectionLeftX = "19px"
+    configs.upDirectionLeftY = "-9px"
+    configs.downDirectionLeftY = "19px"
 
-    configs.negativeDirectionRightX = "20px"
-    configs.positiveDirectionRightX = "-18px"
-    configs.upDirectionRightY = "18px"
-    configs.downDirectionRightY = "1px"
+    configs.negativeDirectionRightX = "-18px"
+    configs.positiveDirectionRightX = "20px"
+    configs.upDirectionRightY = "-9px"
+    configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "-9px"
-    configs.positionEylidR = "-9px"
+    configs.positionEylidL = "-19px"
+    configs.positionEylidR = "-19px"
 
     configs.scleraColor = "white"
 
-    configs.propName = "null"
+    configs.propName = "discoBall"
     configs.propTop = "0px"
     configs.propLeft = "0px"
 
     configs.time = "D"
 
-    configs.quotes = ["Pobres...", "Onde está meu marido Charles?", "Sou Realeza querida", "Não preciso disso..."];
+    configs.quotes = ["Dança bebê, dança.", "Se joga"];
 
     return configs;
 }
 
-export function setUpMlady(setUpConfigs) {
-    setUpConfigs.img.src = "/media/VacaAnimadav11.gif";
+export function setUpBellBottoms(setUpConfigs) {
+    setUpConfigs.img.src = "/media/VacaAnimadav12.gif";
 
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
     setUpConfigs.eyeR.style.setProperty("background-color", "white");
@@ -50,5 +50,6 @@ export function setUpMlady(setUpConfigs) {
     setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
-    setUpConfigs.discoBall.style.display = 'none';
+
+    setUpConfigs.discoBall.style.display = 'inline-block';
 }

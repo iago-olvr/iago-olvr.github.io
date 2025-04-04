@@ -287,6 +287,24 @@ input[type="radio"]:checked + label:before {
     opacity: 85%;
 }
 
+.discoBall {
+    position: absolute;
+    top: -320px;
+    /* display: none; */
+    display: inline-block;
+    animation: dropDown 350ms;
+}
+
+.light {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    filter: blur(10px);
+    opacity:40%;
+    animation: panning 20s linear infinite;
+}
+
 /* ------ KEYFRAMES ------ */
 
 @keyframes panning {
@@ -423,6 +441,16 @@ input[type="radio"]:checked + label:before {
     }
 }
 
-.teste {
-    overflow: hidden;
+@keyframes dropDown {
+    0% {
+        top: -600px;
+    }
+
+    80% {
+        top: -300px;
+    }
+
+    100% {
+        top: -320px;
+    }
 }

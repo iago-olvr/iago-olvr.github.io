@@ -28,6 +28,9 @@ import { setUpMushroom } from '/js/mushroom.js';
 import { getConfigsMlady } from '/js/mlady.js';
 import { setUpMlady } from '/js/mlady.js';
 
+import { getConfigsBellBottoms } from '/js/bellBottoms.js';
+import { setUpBellBottoms } from '/js/bellBottoms.js';
+
 
 // --------------- VAR ---------------
 
@@ -53,6 +56,7 @@ let pupR = document.getElementsByClassName("pupR")[0];
 let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
+let discoBall = document.getElementsByClassName("discoBall")[0];
 let dialog = document.getElementsByClassName("dialog")[0];
 let elderlys = document.getElementsByClassName("elderlys")[0];
 
@@ -102,6 +106,7 @@ let setUpConfigs = {
     pupL: pupL, //The initial size of the left pupil
     pupR: pupR, //The initial size of the right pupil
     glasses: glasses, //the initial state of the glasses
+    discoBall: discoBall, //the initial state of the discoBall
     quotes: dialog, //The quotes to display
 };
 
@@ -247,6 +252,11 @@ function loadConfig(op) {
             setUpMlady(setUpConfigs);
             mouseleave();
             break;
+        case "Disco":
+            configs = getConfigsBellBottoms(configs);
+            setUpBellBottoms(setUpConfigs);
+            mouseleave();
+            break;
         default:
             break;
     }
@@ -351,10 +361,16 @@ function updateRotation(e) {
 
     // ------ Props ------
 
-    if (configs.propName != "null") {
-        let prop = document.getElementsByClassName(configs.propName)[0];
-        prop.style.setProperty("top", "-10px")
-        prop.style.setProperty("transform", "rotate(10deg)")
+    switch (configs.propName) {
+        case "glasses":
+            let prop = document.getElementsByClassName(configs.propName)[0];
+            prop.style.setProperty("top", "-10px")
+            prop.style.setProperty("transform", "rotate(10deg)")
+            break;
+        case "discoBall":
+            break;
+        default:
+            break;
     }
 
     if (currentHumor.innerHTML == "LSD") {
@@ -450,6 +466,9 @@ function mouseleave() {
             break;
         case "Madame":
             setUpMlady(setUpConfigs);
+            break;
+        case "Disco":
+            setUpBellBottoms(setUpConfigs);
             break;
         default:
             break;

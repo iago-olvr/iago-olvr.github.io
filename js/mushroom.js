@@ -57,5 +57,6 @@ export function setUpMushroom(setUpConfigs) {
     setUpConfigs.pupR.style.setProperty("border-radius", "0px")
 
     setUpConfigs.glasses.style.display = 'none';
+    setUpConfigs.discoBall.style.display = 'none';
 
 }

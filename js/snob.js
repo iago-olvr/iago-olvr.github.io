@@ -50,4 +50,5 @@ export function setUpSnob(setUpConfigs) {
     setUpConfigs.pupR.style.setProperty("height", "13px");
 
     setUpConfigs.glasses.style.display = 'none';
+    setUpConfigs.discoBall.style.display = 'none';
 }
