@@ -9,16 +9,16 @@ export function getConfigsBellBottoms(configs) {
 
     configs.negativeDirectionLeftX = "-18px"
     configs.positiveDirectionLeftX = "19px"
-    configs.upDirectionLeftY = "-9px"
+    configs.upDirectionLeftY = "-1px"
     configs.downDirectionLeftY = "19px"
 
     configs.negativeDirectionRightX = "-18px"
     configs.positiveDirectionRightX = "20px"
-    configs.upDirectionRightY = "-9px"
+    configs.upDirectionRightY = "-1px"
     configs.downDirectionRightY = "19px"
 
-    configs.positionEylidL = "-19px"
-    configs.positionEylidR = "-19px"
+    configs.positionEylidL = "-9px"
+    configs.positionEylidR = "-9px"
 
     configs.scleraColor = "white"
 

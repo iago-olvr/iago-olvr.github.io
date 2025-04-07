@@ -377,9 +377,6 @@ function updateRotation(e) {
     }
 
     if (currentHumor.innerHTML == "LSD") {
-        // pupR.style.setProperty("animation", "mudarCor 700ms infinite")
-        // pupL.style.setProperty("animation", "mudarCor 700ms infinite")
-
         pupR.style.setProperty("border-radius", "20px")
         pupL.style.setProperty("border-radius", "20px")
     }
@@ -472,7 +469,6 @@ function mouseleave() {
             break;
         case "Disco":
             lights.style.setProperty("display", "none");
-            // setUpConfigs.discoBall.style.setProperty("animation", "climbUp 350ms linear")
             setUpBellBottoms(setUpConfigs);
             break;
         default:

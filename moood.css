@@ -224,7 +224,6 @@ input[type="radio"]:checked + label:before {
     justify-content: space-evenly;
     top: 38%;
     left: 47.2%;
-    /* overflow: hidden; */
 }
 
 .pupL {
@@ -290,7 +289,6 @@ input[type="radio"]:checked + label:before {
 .discoBall {
     position: absolute;
     top: -320px;
-    /* display: none; */
     display: inline-block;
     animation: dropDown 350ms;
 }
@@ -457,19 +455,5 @@ input[type="radio"]:checked + label:before {
 
     100% {
         top: -320px;
-    }
-}
-
-@keyframes climbUp {
-    0% {
-        top: -320px;
-    }
-
-    20% {
-        top: -300px;
-    }
-
-    100% {
-        top: -600px;
     }
 }
