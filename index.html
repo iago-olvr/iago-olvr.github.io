@@ -96,9 +96,7 @@
                     </div>
                     <div class="eyeR moves">
                         <div class="eylidR"></div>
-                        <div class="pupR">
-                            <div class="teste"></div>
-                        </div>
+                        <div class="pupR"></div>
                     </div>
                 </div>
                 <div class="glasses">
@@ -106,20 +104,107 @@
                     <div class="lensL"></div>
                     <div class="lensR"></div>
                 </div>
+                <div class="discoBall">
+                    <img id="discoBall" src="/media/discoBall.gif" />
+                </div>
+
                 <div class="dialog"></div>
             </div>
         </div>
 
+        <div class="lights">
+            <div
+                class="light"
+                style="
+                    top: 5%;
+                    margin-left: 0%;
+                    background-color: blue;
+                    animation-delay: -5s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 15%;
+                    margin-left: 0%;
+                    background-color: green;
+                    animation-delay: -13s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 20%;
+                    margin-left: 0%;
+                    background-color: magenta;
+                    animation-delay: -8s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 25%;
+                    margin-left: 0%;
+                    background-color: blue;
+                    animation-delay: -11s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 30%;
+                    margin-left: 0%;
+                    background-color: magenta;
+                    animation-delay: -2s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 30%;
+                    margin-left: 0%;
+                    background-color: yellow;
+                    animation-delay: -18s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 45%;
+                    margin-left: 0%;
+                    background-color: green;
+                    animation-delay: -16s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 40%;
+                    margin-left: 0%;
+                    background-color: red;
+                    animation-delay: -7s;
+                "
+            ></div>
+            <div
+                class="light"
+                style="
+                    top: 50%;
+                    margin-left: 0%;
+                    background-color: red;
+                    animation-delay: -1s;
+                "
+            ></div>
+        </div>
+
         <div class="help">
-            <img
-                id="help"
-                src="/media/PlacaAjuda.png"
-                style="margin-top: -85px; margin-left: -60px"
-            />
+            <img id="help" src="/media/PlacaAjuda.png" />
         </div>
         <div class="elderlys">
             <img id="elderlys" src="/media/AmericanGothicSmall.png" />
             <span class="typewriter"></span>
+        </div>
+        <div class="shuffle">
+            <img id="shuffle" src="/media/PlacaAleatorio.png" />
         </div>
 
         <div class="rightBarnPanel focus">
@@ -156,6 +241,14 @@
                     value="m'lady"
                 />
                 <label for="Madame">Madame</label><br />
+                <input
+                    class="radio"
+                    type="radio"
+                    id="Disco"
+                    name="humor"
+                    value="bellBottoms"
+                />
+                <label for="Disco">Disco</label><br />
             </div>
         </div>
     </body>
@@ -164,18 +257,16 @@
 <script type="module" src="js/moood.js"></script>
 
 <!-- TODO: Triste(Pupila Grande, Marejando, Olho n sobe) -->
-<!-- TODO: Colapsando(Stático, Tic no olho) -->
 <!-- TODO: Tímida(Não Olha, Rosada) -->
 <!-- TODO: Sonolenta(Chapada sem olho vermelho e dorme) -->
 <!-- TODO: Apaixonada(Olho de Coração, Animação babando) -->
 <!-- TODO: Veiaco(Olhos Serrados, Suspeito, animação lenta) -->
-<!-- TODO: Disco(DiscoBall, Afro, Cores) -->
 <!-- TODO: Reggae(Dreads, SlowReaction, Olho baixo) -->
+<!-- TODO: PUNK(Moicano, Espinhos, Vidrado) -->
 
-<!-- TODO: Modo aleatório ? -->
 <!-- TODO: Atalhos para os humores (Ctrl+1, Ctrl+2...); -->
 <!-- TODO: Descrição do humor atual como hint no Current ? -->
 <!-- TODO: Modo "Jurassic Park" como jogo ? -->
 <!-- TODO: Modificar o layout para se gerar mais espaços disponíveis -->
-<!-- TODO: Professões -->
-
+<!-- TODO: Profissões -->
+<!-- TODO: Um Helper por Humor-->

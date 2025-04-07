@@ -125,9 +125,15 @@ input[type="radio"]:checked + label:before {
 
 .help {
     position: absolute;
-    width: 200px;
-    height: 120px;
     margin-left: -980px;
+    margin-top: 975px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.shuffle {
+    position: absolute;
+    margin-left: -580px;
     margin-top: 975px;
     z-index: 1;
     cursor: pointer;
@@ -226,7 +232,6 @@ input[type="radio"]:checked + label:before {
     justify-content: space-evenly;
     top: 38%;
     left: 47.2%;
-    /* overflow: hidden; */
 }
 
 .pupL {
@@ -287,6 +292,28 @@ input[type="radio"]:checked + label:before {
     left: 176px;
     background-color: black;
     opacity: 85%;
+}
+
+.discoBall {
+    position: absolute;
+    top: -320px;
+    display: inline-block;
+    animation: dropDown 350ms;
+}
+
+.lights {
+    display: none;
+    pointer-events: none;
+}
+
+.light {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    filter: blur(10px);
+    opacity: 40%;
+    animation: panning 20s linear infinite;
 }
 
 /* ------ KEYFRAMES ------ */
@@ -425,6 +452,16 @@ input[type="radio"]:checked + label:before {
     }
 }
 
-.teste {
-    overflow: hidden;
+@keyframes dropDown {
+    0% {
+        top: -600px;
+    }
+
+    80% {
+        top: -300px;
+    }
+
+    100% {
+        top: -320px;
+    }
 }
