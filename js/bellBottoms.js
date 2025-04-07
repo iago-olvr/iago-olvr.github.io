@@ -49,7 +49,6 @@ export function setUpBellBottoms(setUpConfigs) {
     setUpConfigs.pupL.style.setProperty("height", "13px");
     setUpConfigs.pupR.style.setProperty("height", "13px");
 
-    setUpConfigs.glasses.style.display = 'none';
-
-    setUpConfigs.discoBall.style.display = 'inline-block';
+    setUpConfigs.glasses.style.display = 'none';    
+    setUpConfigs.discoBall.style.display = 'none';
 }

@@ -57,6 +57,7 @@ let eylidL = document.getElementsByClassName("eylidL")[0];
 let eylidR = document.getElementsByClassName("eylidR")[0];
 let glasses = document.getElementsByClassName("glasses")[0];
 let discoBall = document.getElementsByClassName("discoBall")[0];
+let lights = document.getElementsByClassName("lights")[0];
 let dialog = document.getElementsByClassName("dialog")[0];
 let elderlys = document.getElementsByClassName("elderlys")[0];
 
@@ -368,6 +369,8 @@ function updateRotation(e) {
             prop.style.setProperty("transform", "rotate(10deg)")
             break;
         case "discoBall":
+            discoBall.style.display = 'inline-block';
+            lights.style.setProperty("display", "inline-flex");
             break;
         default:
             break;
@@ -468,6 +471,8 @@ function mouseleave() {
             setUpMlady(setUpConfigs);
             break;
         case "Disco":
+            lights.style.setProperty("display", "none");
+            // setUpConfigs.discoBall.style.setProperty("animation", "climbUp 350ms linear")
             setUpBellBottoms(setUpConfigs);
             break;
         default:

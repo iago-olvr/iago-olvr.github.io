@@ -295,13 +295,18 @@ input[type="radio"]:checked + label:before {
     animation: dropDown 350ms;
 }
 
+.lights {
+    display: none;
+    pointer-events: none;
+}
+
 .light {
     position: absolute;
     width: 200px;
     height: 200px;
     border-radius: 100px;
     filter: blur(10px);
-    opacity:40%;
+    opacity: 40%;
     animation: panning 20s linear infinite;
 }
 
@@ -452,5 +457,19 @@ input[type="radio"]:checked + label:before {
 
     100% {
         top: -320px;
+    }
+}
+
+@keyframes climbUp {
+    0% {
+        top: -320px;
+    }
+
+    20% {
+        top: -300px;
+    }
+
+    100% {
+        top: -600px;
     }
 }
