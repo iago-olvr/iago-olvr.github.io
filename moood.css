@@ -131,6 +131,14 @@ input[type="radio"]:checked + label:before {
     cursor: pointer;
 }
 
+.shuffle {
+    position: absolute;
+    margin-left: -580px;
+    margin-top: 975px;
+    z-index: 1;
+    cursor: pointer;
+}
+
 .elderlys {
     position: absolute;
     top: 500px;
