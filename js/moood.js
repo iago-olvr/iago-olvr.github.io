@@ -64,6 +64,7 @@ let elderlys = document.getElementsByClassName("elderlys")[0];
 let id;
 let hue = 0;
 let colorIndex = -1;
+let lastQuoteIndex = -1;
 let requestId;
 const colors = ["red", "blue", "green", "yellow", "cyan", "orange"];
 
@@ -142,7 +143,8 @@ labels.forEach((e) => {
  * @param {*} e = the mouse enter in the hover area
  */
 hover.onmouseenter = (e) => {
-    dialog.innerHTML = configs.quotes[Math.floor(Math.random() * configs.quotes.length)];
+    // dialog.innerHTML = configs.quotes[Math.floor(Math.random() * configs.quotes.length)];
+    showRandomQuote();
 }
 
 /**
@@ -547,6 +549,17 @@ function animateHue(item) {
     body.style.setProperty("filter", "hue-rotate(" + hue + "deg)");
     requestId = requestAnimationFrame(animateHue);
 }
+
+function showRandomQuote() {
+    let newIndex;
+  
+    do {
+      newIndex = Math.floor(Math.random() * configs.quotes.length);
+    } while (newIndex === lastQuoteIndex && configs.quotes.length > 1);
+  
+    lastQuoteIndex = newIndex;
+    dialog.innerHTML = configs.quotes[newIndex];
+  }
 
 
 initialConfig();
