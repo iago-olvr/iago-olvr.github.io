@@ -59,17 +59,25 @@ body {
 }
 
 .leftBarnPanel {
-  width: 210px;
+  position: relative;
+  float: left;
+  width: 150px;
   height: 250px;
-  margin-top: 480px;
+  left: -53px;
+  margin-top: 460px;
+  background-color: #c7b474;
+	border: solid 10px #393939;
 }
 
 .rightBarnPanel {
   position: relative;
-  left: 95px;
-  width: 210px;
+  left: -770px;
+  width: 150px;
   height: 250px;
-  margin-top: 480px;
+  margin-top: 460px;
+  transform: rotateY(90deg);
+  background-color: #c7b474;
+	border: solid 10px #393939;
 }
 
 .status {
@@ -83,9 +91,9 @@ body {
 }
 
 .humorPanel {
-  font-size: large;
+  font-size: 17px;
   color: papayawhip;
-  text-shadow: 1px 4px black;
+  text-shadow: 1px 3px black;
 }
 
 input[type="radio"] {
@@ -96,8 +104,8 @@ label:before {
   cursor: pointer;
   content: "";
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   padding: 2px;
   border-radius: 50%;
   margin-right: 10px;
@@ -108,9 +116,9 @@ label:before {
 input[type="radio"]:checked + label:before {
   content: "\2022";
   color: papayawhip;
-  font-size: 50px;
+  font-size: 35px;
   text-align: center;
-  line-height: 18px;
+  line-height: 12px;
 }
 
 .barn {
@@ -120,6 +128,22 @@ input[type="radio"]:checked + label:before {
   margin-left: -280px;
   margin-top: -155px;
   z-index: -1;
+}
+
+.flip {
+  position: absolute;
+  margin-left: -830px;
+  margin-top: 140px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.help {
+  position: absolute;
+  margin-left: -980px;
+  margin-top: 975px;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .help {
@@ -406,5 +430,23 @@ input[type="radio"]:checked + label:before {
 
   100% {
     top: -320px;
+  }
+}
+
+@keyframes flipHide {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes flipReveal {
+  0% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
   }
 }

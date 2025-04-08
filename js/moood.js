@@ -44,7 +44,10 @@ let img = document.getElementById("img");
 let imgBarn = document.getElementById("barn");
 let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
+let leftBarnPanel = document.getElementsByClassName("leftBarnPanel")[0];
+let rightBarnPanel = document.getElementsByClassName("rightBarnPanel")[0];
 
+let btnFlip = document.getElementById("flip");
 let btnHelp = document.getElementById("help");
 let btnShuffle = document.getElementById("shuffle");
 
@@ -68,6 +71,7 @@ let hue = 0;
 let colorIndex = -1;
 let lastQuoteIndex = -1;
 let requestId;
+let currentPannel = leftBarnPanel;
 const colors = ["red", "blue", "green", "yellow", "cyan", "orange"];
 const mooods = ["Curiosa", "Esnobe", "Chapada", "Ansiosa", "Descolada", "Bufano", "Dormindo", "DVD", "LSD", "Madame", "Disco"];
 
@@ -131,12 +135,12 @@ humorRadio.forEach((e) => {
  */
 labels.forEach((e) => {
     e.onmouseover = (e) => {
-        e.target.style.setProperty("font-size", "x-large")
+        e.target.style.setProperty("font-size", "18px")
         e.target.style.setProperty("font-style", "italic")
 
     }
     e.onmouseleave = (e) => {
-        e.target.style.setProperty("font-size", "large")
+        e.target.style.setProperty("font-size", "17px")
         e.target.style.setProperty("font-style", "normal")
     }
 })
@@ -188,6 +192,28 @@ btnShuffle.onclick = (e) => {
     moood.click();
 }
 
+btnFlip.onclick = (e) => {
+
+    if (currentPannel == leftBarnPanel) {
+        leftBarnPanel.style.setProperty("animation", "flipHide linear 300ms");
+        leftBarnPanel.style.setProperty("transform", "rotateY(90deg)");
+
+        setTimeout(function () {
+            rightBarnPanel.style.setProperty("animation", "flipReveal linear 300ms");
+            rightBarnPanel.style.setProperty("transform", "rotateY(360deg)");
+        }, 400)
+        currentPannel = rightBarnPanel;
+    } else {
+        rightBarnPanel.style.setProperty("animation", "flipHide linear 300ms");
+        rightBarnPanel.style.setProperty("transform", "rotateY(90deg)");
+
+        setTimeout(function () {
+            leftBarnPanel.style.setProperty("animation", "flipReveal linear 300ms");
+            leftBarnPanel.style.setProperty("transform", "rotateY(360deg)");
+        }, 400)
+        currentPannel = leftBarnPanel;
+    }
+}
 
 // --------------- FUNCTIONS ---------------
 
