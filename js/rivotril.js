@@ -37,7 +37,7 @@ export function setUpRivotril(setUpConfigs) {
     setUpConfigs.img.src = "/media/VacaAnimadav5.gif";
 
     setUpConfigs.eyeL.style.setProperty("background-color", "white");
-    setUpConfigs.eyeR.style.setProperty("background-color", "white");
+    setUpConfigs.eyeR.style.setProperty("background-color", "transparent");
     setUpConfigs.eylidL.style.setProperty("top", "-34px");
     setUpConfigs.eylidR.style.setProperty("top", "-34px");
 
