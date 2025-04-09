@@ -161,21 +161,21 @@ input[type="radio"]:checked + label:before {
 
 #hay {
   position: absolute;
-  margin-left: 570px;
+  margin-left: 700px;
   margin-top: 480px;
   z-index: -1;
 }
 
 #hay2 {
   position: absolute;
-  margin-left: 725px;
+  margin-left: 855px;
   margin-top: 485px;
   z-index: -1;
 }
 
 #hay3 {
   position: absolute;
-  margin-left: 645px;
+  margin-left: 775px;
   margin-top: 360px;
   z-index: -1;
 }
