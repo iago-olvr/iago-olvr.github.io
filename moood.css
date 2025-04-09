@@ -58,26 +58,54 @@ body {
   animation-delay: -215s;
 }
 
+.sign {
+  position: absolute;
+  width: 200px;
+  margin-left: -89px;
+  margin-top: 390px;
+}
+
+.side {
+  position: relative;
+  width: 20px;
+  height: 260px;
+  margin-top: -330px;
+  left: 10px;
+  background-color: #292929;
+  transform: rotateY(-90deg);
+  z-index: 2;
+}
+
+.flip {
+  position: absolute;
+  margin-left: -8px;
+  margin-top: 360px;
+  z-index: 2;
+  cursor: pointer;
+  z-index: 2;
+}
+
 .leftBarnPanel {
   position: relative;
   float: left;
-  width: 150px;
-  height: 250px;
-  left: -53px;
-  margin-top: 460px;
-  background-color: #c7b474;
-	border: solid 10px #393939;
+  width: 165px;
+  height: 220px;
+  left: -75px;
+  margin-top: 400px;
+  padding-top: 10px;
+  z-index: 1;
 }
 
 .rightBarnPanel {
   position: relative;
-  left: -770px;
-  width: 150px;
-  height: 250px;
-  margin-top: 460px;
+  float: left;
+  width: 165px;
+  height: 220px;
+  left: -270px;
+  margin-top: 400px;
+  padding-top: 10px;
   transform: rotateY(90deg);
-  background-color: #c7b474;
-	border: solid 10px #393939;
+  z-index: 1;
 }
 
 .status {
@@ -91,7 +119,7 @@ body {
 }
 
 .humorPanel {
-  font-size: 17px;
+  font-size: 18px;
   color: papayawhip;
   text-shadow: 1px 3px black;
 }
@@ -108,8 +136,9 @@ label:before {
   height: 15px;
   padding: 2px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 5px;
   margin-top: 3px;
+  margin-left: 5px;
   box-shadow: inset 4px 3px 4px 1px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8);
 }
 
@@ -128,14 +157,6 @@ input[type="radio"]:checked + label:before {
   margin-left: -280px;
   margin-top: -155px;
   z-index: -1;
-}
-
-.flip {
-  position: absolute;
-  margin-left: -830px;
-  margin-top: 140px;
-  z-index: 1;
-  cursor: pointer;
 }
 
 .help {
@@ -437,16 +458,46 @@ input[type="radio"]:checked + label:before {
   0% {
     transform: rotateY(0deg);
   }
+  30% {
+    filter: drop-shadow(-5px 0px 0px #292929);
+  }
   100% {
     transform: rotateY(90deg);
+    filter: drop-shadow(-30px 0px 0px #292929);
   }
 }
 
 @keyframes flipReveal {
   0% {
-    transform: rotateY(-90deg);
+    transform: rotateY(90deg);
+    filter: drop-shadow(30px 0px 0px #292929);
+  }
+  70% {
+    filter: drop-shadow(5px 0px 0px #292929);
   }
   100% {
     transform: rotateY(0deg);
+  }
+}
+
+@keyframes flipSideHide {
+  0% {
+    left: 0px;
+    transform: rotateY(270deg);
+  }
+  100% {
+    left: 110px;
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes flipSideReveal {
+  0% {
+    left: 110px;
+    transform: rotateY(0deg);
+  }
+  100% {
+    left: 200px;
+    transform: rotateY(90deg);
   }
 }

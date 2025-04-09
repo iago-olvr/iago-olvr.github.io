@@ -50,6 +50,8 @@ let rightBarnPanel = document.getElementsByClassName("rightBarnPanel")[0];
 let btnFlip = document.getElementById("flip");
 let btnHelp = document.getElementById("help");
 let btnShuffle = document.getElementById("shuffle");
+let side = document.getElementById("side");
+let sign = document.getElementById("sign");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
@@ -135,12 +137,12 @@ humorRadio.forEach((e) => {
  */
 labels.forEach((e) => {
     e.onmouseover = (e) => {
-        e.target.style.setProperty("font-size", "18px")
+        e.target.style.setProperty("font-size", "20px")
         e.target.style.setProperty("font-style", "italic")
 
     }
     e.onmouseleave = (e) => {
-        e.target.style.setProperty("font-size", "17px")
+        e.target.style.setProperty("font-size", "18px")
         e.target.style.setProperty("font-style", "normal")
     }
 })
@@ -194,22 +196,36 @@ btnShuffle.onclick = (e) => {
 
 btnFlip.onclick = (e) => {
 
+    side.style.removeProperty("animation");
+
     if (currentPannel == leftBarnPanel) {
         leftBarnPanel.style.setProperty("animation", "flipHide linear 300ms");
         leftBarnPanel.style.setProperty("transform", "rotateY(90deg)");
+        btnFlip.style.setProperty("animation", "flipHide linear 300ms");
+        btnFlip.style.setProperty("transform", "rotateY(90deg)");
+        side.style.setProperty("animation", "flipSideHide 300ms ease-in");
 
         setTimeout(function () {
             rightBarnPanel.style.setProperty("animation", "flipReveal linear 300ms");
             rightBarnPanel.style.setProperty("transform", "rotateY(360deg)");
+            btnFlip.style.setProperty("animation", "flipReveal linear 300ms");
+            btnFlip.style.setProperty("transform", "rotateY(0deg)");
+            side.style.setProperty("animation", "flipSideReveal 300ms ease-out");
         }, 400)
         currentPannel = rightBarnPanel;
     } else {
         rightBarnPanel.style.setProperty("animation", "flipHide linear 300ms");
         rightBarnPanel.style.setProperty("transform", "rotateY(90deg)");
+        btnFlip.style.setProperty("animation", "flipHide linear 300ms");
+        btnFlip.style.setProperty("transform", "rotateY(90deg)");
+        side.style.setProperty("animation", "flipSideHide 300ms ease-in");
 
         setTimeout(function () {
             leftBarnPanel.style.setProperty("animation", "flipReveal linear 300ms");
             leftBarnPanel.style.setProperty("transform", "rotateY(360deg)");
+            btnFlip.style.setProperty("animation", "flipReveal linear 300ms");
+            btnFlip.style.setProperty("transform", "rotateY(0deg)");
+            side.style.setProperty("animation", "flipSideReveal 300ms ease-out");
         }, 400)
         currentPannel = leftBarnPanel;
     }
@@ -445,9 +461,18 @@ function mouseleave() {
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
+
+        sign.src = "/media/signv2.png";
+        leftBarnPanel.style.background = "url('/media/signBackv2.png') center";
+        leftBarnPanel.style.border = "solid 15px #171717";
+        rightBarnPanel.style.background = "url('/media/signBackv2.png') center";
+        rightBarnPanel.style.border = "solid 15px #171717";
+        btnFlip.src = "/media/botaoFlipv2.png";
+
         btnHelp.src = "/media/PlacaAjudav2.png";
         btnShuffle.src = "/media/PlacaAleatoriov2.png";
         btnHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #442d07)")
+
         imgElderlys.src = "/media/AmericanGothicSmallv2.png"
         body.style.backgroundImage = "url('/media/backgroundv2.png')";
         body.style.backgroundColor = "#074505";
@@ -461,9 +486,18 @@ function mouseleave() {
         })
     } else { //Day
         imgBarn.src = "/media/Barnv2.png";
+
+        sign.src = "/media/sign.png";
+        leftBarnPanel.style.background = "url('/media/signBack.png') center";
+        leftBarnPanel.style.border = "solid 15px #393939";
+        rightBarnPanel.style.background = "url('/media/signBack.png') center";
+        rightBarnPanel.style.border = "solid 15px #393939";
+        btnFlip.src = "/media/botaoFlip.png";
+
         btnHelp.src = "/media/PlacaAjuda.png";
         btnShuffle.src = "/media/PlacaAleatorio.png";
         btnHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #ab7012)")
+
         imgElderlys.src = "/media/AmericanGothicSmall.png"
         body.style.backgroundImage = "url('/media/background.png')";
         body.style.backgroundColor = "#11ac0d";
