@@ -44,9 +44,15 @@ let img = document.getElementById("img");
 let imgBarn = document.getElementById("barn");
 let imgElderlys = document.getElementById("elderlys");
 let currentHumor = document.getElementById("currentHumor");
+let leftBarnPanel = document.getElementsByClassName("leftBarnPanel")[0];
+let rightBarnPanel = document.getElementsByClassName("rightBarnPanel")[0];
 
+let btnFlip = document.getElementById("flip");
 let btnHelp = document.getElementById("help");
 let btnShuffle = document.getElementById("shuffle");
+let side = document.getElementById("side");
+let sign = document.getElementById("sign");
+let imgCorpo = document.getElementById("imgCorpo");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
@@ -68,6 +74,7 @@ let hue = 0;
 let colorIndex = -1;
 let lastQuoteIndex = -1;
 let requestId;
+let currentPannel = leftBarnPanel;
 const colors = ["red", "blue", "green", "yellow", "cyan", "orange"];
 const mooods = ["Curiosa", "Esnobe", "Chapada", "Ansiosa", "Descolada", "Bufano", "Dormindo", "DVD", "LSD", "Madame", "Disco"];
 
@@ -131,12 +138,12 @@ humorRadio.forEach((e) => {
  */
 labels.forEach((e) => {
     e.onmouseover = (e) => {
-        e.target.style.setProperty("font-size", "x-large")
+        e.target.style.setProperty("font-size", "20px")
         e.target.style.setProperty("font-style", "italic")
 
     }
     e.onmouseleave = (e) => {
-        e.target.style.setProperty("font-size", "large")
+        e.target.style.setProperty("font-size", "18px")
         e.target.style.setProperty("font-style", "normal")
     }
 })
@@ -188,6 +195,42 @@ btnShuffle.onclick = (e) => {
     moood.click();
 }
 
+btnFlip.onclick = (e) => {
+
+    side.style.removeProperty("animation");
+
+    if (currentPannel == leftBarnPanel) {
+        leftBarnPanel.style.setProperty("animation", "flipHide linear 300ms");
+        leftBarnPanel.style.setProperty("transform", "rotateY(90deg)");
+        btnFlip.style.setProperty("animation", "flipHide linear 300ms");
+        btnFlip.style.setProperty("transform", "rotateY(90deg)");
+        side.style.setProperty("animation", "flipSideHide 300ms ease-in");
+
+        setTimeout(function () {
+            rightBarnPanel.style.setProperty("animation", "flipReveal linear 300ms");
+            rightBarnPanel.style.setProperty("transform", "rotateY(360deg)");
+            btnFlip.style.setProperty("animation", "flipReveal linear 300ms");
+            btnFlip.style.setProperty("transform", "rotateY(0deg)");
+            side.style.setProperty("animation", "flipSideReveal 300ms ease-out");
+        }, 400)
+        currentPannel = rightBarnPanel;
+    } else {
+        rightBarnPanel.style.setProperty("animation", "flipHide linear 300ms");
+        rightBarnPanel.style.setProperty("transform", "rotateY(90deg)");
+        btnFlip.style.setProperty("animation", "flipHide linear 300ms");
+        btnFlip.style.setProperty("transform", "rotateY(90deg)");
+        side.style.setProperty("animation", "flipSideHide 300ms ease-in");
+
+        setTimeout(function () {
+            leftBarnPanel.style.setProperty("animation", "flipReveal linear 300ms");
+            leftBarnPanel.style.setProperty("transform", "rotateY(360deg)");
+            btnFlip.style.setProperty("animation", "flipReveal linear 300ms");
+            btnFlip.style.setProperty("transform", "rotateY(0deg)");
+            side.style.setProperty("animation", "flipSideReveal 300ms ease-out");
+        }, 400)
+        currentPannel = leftBarnPanel;
+    }
+}
 
 // --------------- FUNCTIONS ---------------
 
@@ -419,9 +462,22 @@ function mouseleave() {
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
+        hay.src = "/media/hayv2.png";
+        hay2.src = "/media/hay2v2.png";
+        hay3.src = "/media/hay3v2.png";
+        imgCorpo.src = "/media/corpov2.png";
+
+        sign.src = "/media/signv2.png";
+        leftBarnPanel.style.background = "url('/media/signBackv2.png') center";
+        leftBarnPanel.style.border = "solid 15px #171717";
+        rightBarnPanel.style.background = "url('/media/signBackv2.png') center";
+        rightBarnPanel.style.border = "solid 15px #171717";
+        btnFlip.src = "/media/botaoFlipv2.png";
+
         btnHelp.src = "/media/PlacaAjudav2.png";
         btnShuffle.src = "/media/PlacaAleatoriov2.png";
         btnHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #442d07)")
+
         imgElderlys.src = "/media/AmericanGothicSmallv2.png"
         body.style.backgroundImage = "url('/media/backgroundv2.png')";
         body.style.backgroundColor = "#074505";
@@ -435,9 +491,22 @@ function mouseleave() {
         })
     } else { //Day
         imgBarn.src = "/media/Barnv2.png";
+        hay.src = "/media/hay.png";
+        hay2.src = "/media/hay2.png";
+        hay3.src = "/media/hay3.png";
+        imgCorpo.src = "/media/corpo.png";
+
+        sign.src = "/media/sign.png";
+        leftBarnPanel.style.background = "url('/media/signBack.png') center";
+        leftBarnPanel.style.border = "solid 15px #393939";
+        rightBarnPanel.style.background = "url('/media/signBack.png') center";
+        rightBarnPanel.style.border = "solid 15px #393939";
+        btnFlip.src = "/media/botaoFlip.png";
+
         btnHelp.src = "/media/PlacaAjuda.png";
         btnShuffle.src = "/media/PlacaAleatorio.png";
         btnHelp.style.setProperty("filter", "drop-shadow(0px 8px 0px #ab7012)")
+
         imgElderlys.src = "/media/AmericanGothicSmall.png"
         body.style.backgroundImage = "url('/media/background.png')";
         body.style.backgroundColor = "#11ac0d";
@@ -492,7 +561,7 @@ function mouseleave() {
  * Function that call the helper
  */
 function getHelp() {
-    btnHelp.style.setProperty("margin-top", "10px")
+    btnHelp.style.setProperty("transform", "translate(0px, 10px")
     elderlys.style.display = "inline-block";
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "blur(5px)";
@@ -505,7 +574,6 @@ function getHelp() {
  */
 function disposeHelp() {
     elderlys.style.setProperty("animation", "byebyeElderlys 500ms");
-
     document.querySelectorAll('.focus').forEach(el => {
         el.style.filter = "none";
     })
@@ -516,7 +584,7 @@ function disposeHelp() {
  * Function that resets the helper to his original state
  */
 function resetsHelp() {
-    btnHelp.style.setProperty("margin-top", "0px")
+    btnHelp.style.setProperty("transform", "translate(0px, 0px")
     elderlys.style.display = "none";
     elderlys.style.setProperty("animation", "helloElderlys 500ms");
 }

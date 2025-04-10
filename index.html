@@ -1,257 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" type="text/css" href="moood.css" />
-        <link rel="icon" type="image/x-icon" href="/media/Barn.png" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=0.5" />
-        <title>Moood</title>
-    </head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="moood.css" />
+    <link rel="icon" type="image/x-icon" href="/media/Barn.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+    <title>Moood</title>
+  </head>
 
-    <body>
-        <div class="sky focus">
-            <img id="cloud1" src="media/cloud5.png" />
-            <img id="cloud2" src="media/cloud6.png" />
-            <img id="cloud3" src="media/cloud6.png" />
-            <img id="cloud4" src="media/cloud5.png" />
+  <body>
+    <div class="sky focus">
+      <img id="cloud1" src="media/cloud5.png" />
+      <img id="cloud2" src="media/cloud6.png" />
+      <img id="cloud3" src="media/cloud6.png" />
+      <img id="cloud4" src="media/cloud5.png" />
+    </div>
+
+    <div style="margin-left: -440px">
+      <div class="sign focus">
+        <img id="sign" src="/media/sign.png" />
+        <div class="side" id="side"></div>
+      </div>
+      <div class="flip focus">
+        <img id="flip" src="/media/botaoFlip.png" />
+      </div>
+
+      <div class="leftBarnPanel focus">
+        <div class="humorPanel">
+          <input class="radio" type="radio" id="Curiosa" name="humor" value="curious" checked="checked" />
+          <label for="Curiosa">Curiosa</label><br />
+          <input class="radio" type="radio" id="Esnobe" name="humor" value="snob" />
+          <label for="Esnobe">Esnobe</label><br />
+          <input class="radio" type="radio" id="Chapada" name="humor" value="marijane" />
+          <label for="Chapada">Chapada</label><br />
+          <input class="radio" type="radio" id="Ansiosa" name="humor" value="rivotril" />
+          <label for="Ansiosa">Ansiosa</label><br />
+          <input class="radio" type="radio" id="Descolada" name="humor" value="gum" />
+          <label for="Descolada">Descolada</label><br />
+          <input class="radio" type="radio" id="Bufano" name="humor" value="shitcrazy" />
+          <label for="Bufano">Bufano</label><br />
+          <input class="radio" type="radio" id="Dormindo" name="humor" value="dramin" />
+          <label for="Dormindo">Dormindo</label><br />
+          <input class="radio" type="radio" id="DVD" name="humor" value="dvd" />
+          <label for="DVD">DVD</label><br />
+        </div>
+      </div>
+
+      <div class="rightBarnPanel focus">
+        <div class="humorPanel">
+          <input class="radio" type="radio" id="LSD" name="humor" value="lsd" />
+          <label for="LSD">LSD</label><br />
+          <input class="radio" type="radio" id="Madame" name="humor" value="m'lady" />
+          <label for="Madame">Madame</label><br />
+          <input class="radio" type="radio" id="Disco" name="humor" value="bellBottoms" />
+          <label for="Disco">Disco</label><br />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="status focus">
+        <div style="width: 100%">
+          <span id="currentHumor"></span>
+        </div>
+      </div>
+      <div class="barn focus">
+        <img id="barn" src="/media/Barnv2.png" />
+      </div>
+      <div class="hay focus">
+        <img id="hay" src="/media/hay.png" />
+        <img id="hay2" src="/media/hay2.png" />
+        <img id="hay3" src="/media/hay3.png" />
+      </div>
+      <div class="hover focus">
+        <div class="cow">
+          <div class="div">
+            <img id="imgCorpo" src="/media/corpo.png" class="movel" />
+          </div>
+          <div class="front movel">
+            <img id="img" src="/media/VacaAnimadav3.gif" class="movel" />
+          </div>
+
+          <div class="eyeL moves">
+            <div class="eylidL"></div>
+            <div class="pupL"></div>
+          </div>
+          <div class="eyeR moves">
+            <div class="eylidR"></div>
+            <div class="pupR"></div>
+          </div>
+        </div>
+        <div class="glasses">
+          <img id="glasses" src="/media/oculos.png" />
+          <div class="lensL"></div>
+          <div class="lensR"></div>
+        </div>
+        <div class="discoBall">
+          <img id="discoBall" src="/media/discoBall.gif" />
         </div>
 
-        <div class="leftBarnPanel focus">
-            <div class="humorPanel">
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Curiosa"
-                    name="humor"
-                    value="curious"
-                    checked="checked"
-                />
-                <label for="Curiosa">Curiosa</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Esnobe"
-                    name="humor"
-                    value="snob"
-                />
-                <label for="Esnobe">Esnobe</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Chapada"
-                    name="humor"
-                    value="marijane"
-                />
-                <label for="Chapada">Chapada</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Ansiosa"
-                    name="humor"
-                    value="rivotril"
-                />
-                <label for="Ansiosa">Ansiosa</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Descolada"
-                    name="humor"
-                    value="gum"
-                />
-                <label for="Descolada">Descolada</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Bufano"
-                    name="humor"
-                    value="shitcrazy"
-                />
-                <label for="Bufano">Bufano</label><br />
-            </div>
-        </div>
+        <div class="dialog"></div>
+      </div>
+    </div>
 
-        <div>
-            <div class="status focus">
-                <div style="width: 100%">
-                    <span id="currentHumor"></span>
-                </div>
-            </div>
+    <div class="lights">
+      <div class="light" style="top: 5%; margin-left: 0%; background-color: blue; animation-delay: -5s"></div>
+      <div class="light" style="top: 15%; margin-left: 0%; background-color: green; animation-delay: -13s"></div>
+      <div class="light" style="top: 20%; margin-left: 0%; background-color: magenta; animation-delay: -8s"></div>
+      <div class="light" style="top: 25%; margin-left: 0%; background-color: blue; animation-delay: -11s"></div>
+      <div class="light" style="top: 30%; margin-left: 0%; background-color: magenta; animation-delay: -2s"></div>
+      <div class="light" style="top: 30%; margin-left: 0%; background-color: yellow; animation-delay: -18s"></div>
+      <div class="light" style="top: 45%; margin-left: 0%; background-color: green; animation-delay: -16s"></div>
+      <div class="light" style="top: 40%; margin-left: 0%; background-color: red; animation-delay: -7s"></div>
+      <div class="light" style="top: 50%; margin-left: 0%; background-color: red; animation-delay: -1s"></div>
+    </div>
 
-            <div class="barn focus">
-                <img id="barn" src="/media/Barnv2.png" />
-            </div>
-            <div class="hover focus">
-                <div class="cow">
-                    <div class="front movel">
-                        <img
-                            id="img"
-                            src="/media/VacaAnimadav3.gif"
-                            class="movel"
-                        />
-                    </div>
-
-                    <div class="eyeL moves">
-                        <div class="eylidL"></div>
-                        <div class="pupL"></div>
-                    </div>
-                    <div class="eyeR moves">
-                        <div class="eylidR"></div>
-                        <div class="pupR"></div>
-                    </div>
-                </div>
-                <div class="glasses">
-                    <img id="glasses" src="/media/oculos.png" />
-                    <div class="lensL"></div>
-                    <div class="lensR"></div>
-                </div>
-                <div class="discoBall">
-                    <img id="discoBall" src="/media/discoBall.gif" />
-                </div>
-
-                <div class="dialog"></div>
-            </div>
-        </div>
-
-        <div class="lights">
-            <div
-                class="light"
-                style="
-                    top: 5%;
-                    margin-left: 0%;
-                    background-color: blue;
-                    animation-delay: -5s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 15%;
-                    margin-left: 0%;
-                    background-color: green;
-                    animation-delay: -13s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 20%;
-                    margin-left: 0%;
-                    background-color: magenta;
-                    animation-delay: -8s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 25%;
-                    margin-left: 0%;
-                    background-color: blue;
-                    animation-delay: -11s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 30%;
-                    margin-left: 0%;
-                    background-color: magenta;
-                    animation-delay: -2s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 30%;
-                    margin-left: 0%;
-                    background-color: yellow;
-                    animation-delay: -18s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 45%;
-                    margin-left: 0%;
-                    background-color: green;
-                    animation-delay: -16s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 40%;
-                    margin-left: 0%;
-                    background-color: red;
-                    animation-delay: -7s;
-                "
-            ></div>
-            <div
-                class="light"
-                style="
-                    top: 50%;
-                    margin-left: 0%;
-                    background-color: red;
-                    animation-delay: -1s;
-                "
-            ></div>
-        </div>
-
-        <div class="help">
-            <img id="help" src="/media/PlacaAjuda.png" />
-        </div>
-        <div class="elderlys">
-            <img id="elderlys" src="/media/AmericanGothicSmall.png" />
-            <span class="typewriter"></span>
-        </div>
-        <div class="shuffle">
-            <img id="shuffle" src="/media/PlacaAleatorio.png" />
-        </div>
-
-        <div class="rightBarnPanel focus">
-            <div class="humorPanel">
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Dormindo"
-                    name="humor"
-                    value="dramin"
-                />
-                <label for="Dormindo">Dormindo</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="DVD"
-                    name="humor"
-                    value="dvd"
-                />
-                <label for="DVD">DVD</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="LSD"
-                    name="humor"
-                    value="lsd"
-                />
-                <label for="LSD">LSD</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Madame"
-                    name="humor"
-                    value="m'lady"
-                />
-                <label for="Madame">Madame</label><br />
-                <input
-                    class="radio"
-                    type="radio"
-                    id="Disco"
-                    name="humor"
-                    value="bellBottoms"
-                />
-                <label for="Disco">Disco</label><br />
-            </div>
-        </div>
-    </body>
+    <div class="help">
+      <img id="help" src="/media/PlacaAjuda.png" />
+    </div>
+    <div class="elderlys">
+      <img id="elderlys" src="/media/AmericanGothicSmall.png" />
+      <span class="typewriter"></span>
+    </div>
+    <div class="shuffle">
+      <img id="shuffle" src="/media/PlacaAleatorio.png" />
+    </div>
+  </body>
 </html>
 
 <script type="module" src="js/moood.js"></script>
@@ -270,3 +144,5 @@
 <!-- TODO: Modificar o layout para se gerar mais espaços disponíveis -->
 <!-- TODO: Profissões -->
 <!-- TODO: Um Helper por Humor-->
+
+<!-- FIX: Nuvens "sumindo" -->
