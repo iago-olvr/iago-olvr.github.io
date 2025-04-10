@@ -113,7 +113,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 550px;
+  width: 530px;
   padding: 5%;
   margin-top: 5%;
 }
@@ -243,6 +243,12 @@ input[type="radio"]:checked + label:before {
 
 #img {
   filter: drop-shadow(0px 0px 0px black);
+}
+
+#imgCorpo {
+  position: absolute;
+  top: 89px;
+  left: 87px;
 }
 
 .dialog {

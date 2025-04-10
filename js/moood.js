@@ -52,6 +52,7 @@ let btnHelp = document.getElementById("help");
 let btnShuffle = document.getElementById("shuffle");
 let side = document.getElementById("side");
 let sign = document.getElementById("sign");
+let imgCorpo = document.getElementById("imgCorpo");
 
 let humorRadio = document.querySelectorAll("input[type='radio']");
 let labels = document.querySelectorAll("label");
@@ -464,6 +465,7 @@ function mouseleave() {
         hay.src = "/media/hayv2.png";
         hay2.src = "/media/hay2v2.png";
         hay3.src = "/media/hay3v2.png";
+        imgCorpo.src = "/media/corpov2.png";
 
         sign.src = "/media/signv2.png";
         leftBarnPanel.style.background = "url('/media/signBackv2.png') center";
@@ -489,6 +491,10 @@ function mouseleave() {
         })
     } else { //Day
         imgBarn.src = "/media/Barnv2.png";
+        hay.src = "/media/hay.png";
+        hay2.src = "/media/hay2.png";
+        hay3.src = "/media/hay3.png";
+        imgCorpo.src = "/media/corpo.png";
 
         sign.src = "/media/sign.png";
         leftBarnPanel.style.background = "url('/media/signBack.png') center";
