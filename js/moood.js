@@ -461,6 +461,9 @@ function mouseleave() {
 
     if (configs.time == "N") { //Night
         imgBarn.src = "/media/Barnv3.png";
+        hay.src = "/media/hayv2.png";
+        hay2.src = "/media/hay2v2.png";
+        hay3.src = "/media/hay3v2.png";
 
         sign.src = "/media/signv2.png";
         leftBarnPanel.style.background = "url('/media/signBackv2.png') center";
