@@ -36,8 +36,8 @@ body {
 #cloud2 {
   position: absolute;
   scale: 0.5;
-  left: 10%;
-  animation: panning 200s linear infinite;
+  left: 55%;
+  animation: panningCloud2 200s linear infinite;
   animation-delay: -180s;
 }
 
@@ -45,16 +45,16 @@ body {
   position: absolute;
   scale: 0.3;
   left: 55%;
-  animation: panning 250s linear infinite;
+  animation: panningCloud3 250s linear infinite;
   animation-delay: -180s;
 }
 
 #cloud4 {
   position: absolute;
   scale: 0.15;
-  left: 75%;
+  left: 70%;
   top: 30%;
-  animation: panning 350s linear infinite;
+  animation: panningCloud4 350s linear infinite;
   animation-delay: -215s;
 }
 
@@ -389,12 +389,43 @@ input[type="radio"]:checked + label:before {
 
 /* ------ KEYFRAMES ------ */
 
-@keyframes panning {
+ @keyframes panning {
   0% {
-    left: 105%;
+    transform: translateX(100vw);
   }
+
   100% {
-    left: -20%;
+    transform: translateX(calc(-100vw - 100%));
+  }
+}
+
+ @keyframes panningCloud2 {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(calc(-150vw - 150%));
+  }
+}
+
+@keyframes panningCloud3 {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(calc(-200vw - 200%));
+  }
+}
+
+@keyframes panningCloud4 {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(calc(-500vw - 500%));
   }
 }
 
